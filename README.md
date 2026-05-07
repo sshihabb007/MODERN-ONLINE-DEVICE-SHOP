@@ -1,5 +1,7 @@
 # Neon-Glass Axiom (Modern Online Device Shop)
 
+**Live UI Preview:** [https://sshihabb007.github.io/MODERN-ONLINE-DEVICE-SHOP/](https://sshihabb007.github.io/MODERN-ONLINE-DEVICE-SHOP/)
+
 A futuristic, cyberpunk-themed e-commerce platform built with PHP, MySQL, and Tailwind CSS. The platform features a premium glassmorphism UI, a fully functional dynamic shopping cart, and a secure role-based authentication system.
 
 ## 🌟 Key Features
