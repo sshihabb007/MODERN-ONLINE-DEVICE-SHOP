@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Add New Artifact - Neon-Glass Axiom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "surface-container-high": "#1e2b39",
+                      "background": "#061422",
+                      "on-secondary": "#4a007f",
+                      "inverse-on-surface": "#243240",
+                      "on-primary-fixed-variant": "#004f4f",
+                      "tertiary-fixed": "#e5e2e1",
+                      "surface-container": "#13212e",
+                      "on-background": "#d6e4f7",
+                      "surface-bright": "#2d3a49",
+                      "error-container": "#93000a",
+                      "primary-container": "#00fbfb",
+                      "on-primary-fixed": "#002020",
+                      "surface-container-highest": "#293644",
+                      "on-tertiary": "#313030",
+                      "tertiary": "#ffffff",
+                      "error": "#ffb4ab",
+                      "on-secondary-container": "#d4a5ff",
+                      "surface-container-low": "#0f1d2a",
+                      "secondary": "#deb7ff",
+                      "on-error-container": "#ffdad6",
+                      "tertiary-fixed-dim": "#c8c6c5",
+                      "tertiary-container": "#e5e2e1",
+                      "secondary-fixed-dim": "#deb7ff",
+                      "surface": "#061422",
+                      "outline": "#839493",
+                      "on-primary": "#003737",
+                      "outline-variant": "#3a4a49",
+                      "surface-container-lowest": "#020f1c",
+                      "inverse-surface": "#d6e4f7",
+                      "on-tertiary-fixed": "#1c1b1b",
+                      "on-primary-container": "#007070",
+                      "primary-fixed-dim": "#00dddd",
+                      "primary-fixed": "#00fbfb",
+                      "on-secondary-fixed": "#2d0050",
+                      "on-secondary-fixed-variant": "#680eac",
+                      "on-tertiary-container": "#656464",
+                      "on-surface": "#d6e4f7",
+                      "secondary-fixed": "#f1dbff",
+                      "on-tertiary-fixed-variant": "#474646",
+                      "inverse-primary": "#006a6a",
+                      "surface-variant": "#293644",
+                      "primary": "#ffffff",
+                      "on-error": "#690005",
+                      "surface-tint": "#00dddd",
+                      "surface-dim": "#061422",
+                      "secondary-container": "#6b13af",
+                      "on-surface-variant": "#b9cac9"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "spacing": {
+                      "stack-sm": "12px",
+                      "margin": "48px",
+                      "unit": "4px",
+                      "gutter": "24px",
+                      "stack-lg": "48px",
+                      "container-max": "1440px",
+                      "stack-md": "24px"
+              },
+              "fontFamily": {
+                      "label-caps": [
+                              "Space Grotesk"
+                      ],
+                      "h2": [
+                              "Space Grotesk"
+                      ],
+                      "h1": [
+                              "Space Grotesk"
+                      ],
+                      "button": [
+                              "Space Grotesk"
+                      ],
+                      "h3": [
+                              "Space Grotesk"
+                      ],
+                      "display": [
+                              "Space Grotesk"
+                      ],
+                      "body-lg": [
+                              "Inter"
+                      ],
+                      "body-md": [
+                              "Inter"
+                      ]
+              },
+              "fontSize": {
+                      "label-caps": [
+                              "12px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.1em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "h2": [
+                              "32px",
+                              {
+                                      "lineHeight": "1.3",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h1": [
+                              "48px",
+                              {
+                                      "lineHeight": "1.2",
+                                      "letterSpacing": "-0.01em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "button": [
+                              "14px",
+                              {
+                                      "lineHeight": "1",
+                                      "letterSpacing": "0.05em",
+                                      "fontWeight": "600"
+                              }
+                      ],
+                      "h3": [
+                              "24px",
+                              {
+                                      "lineHeight": "1.4",
+                                      "fontWeight": "500"
+                              }
+                      ],
+                      "display": [
+                              "72px",
+                              {
+                                      "lineHeight": "1.1",
+                                      "letterSpacing": "-0.02em",
+                                      "fontWeight": "700"
+                              }
+                      ],
+                      "body-lg": [
+                              "18px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ],
+                      "body-md": [
+                              "16px",
+                              {
+                                      "lineHeight": "1.6",
+                                      "fontWeight": "400"
+                              }
+                      ]
+              }
+      },
+          },
+        }
+      </script>
+<style>
+        body {
+            background-color: #061422;
+            color: #d6e4f7;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(0, 251, 251, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 85% 30%, rgba(107, 19, 175, 0.05) 0%, transparent 50%);
+            background-attachment: fixed;
+        }
+
+        /* Glassmorphism Classes */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 221, 221, 0.2);
+        }
+
+        .glass-panel-interactive:hover {
+            border: 1px solid rgba(0, 221, 221, 1);
+            box-shadow: inset 0 0 20px rgba(107, 19, 175, 0.2), 0 0 15px rgba(0, 221, 221, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .glass-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0, 221, 221, 0.4);
+            color: #d6e4f7;
+            transition: all 0.3s ease;
+        }
+
+        .glass-input:focus {
+            outline: none;
+            border: 1px solid rgba(0, 221, 221, 1);
+            border-radius: 4px;
+            box-shadow: inset 0 0 10px rgba(0, 221, 221, 0.1);
+            text-shadow: 0 0 8px rgba(0, 221, 221, 0.5);
+        }
+        
+        .glass-select {
+            background-color: #0f1d2a;
+            border: 1px solid rgba(0, 221, 221, 0.4);
+            color: #d6e4f7;
+        }
+        .glass-select:focus {
+             outline: none;
+             border: 1px solid rgba(0, 221, 221, 1);
+             box-shadow: 0 0 10px rgba(0, 221, 221, 0.2);
+        }
+
+        /* Buttons */
+        .btn-ghost-glass {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 221, 221, 0.6);
+            color: #00fbfb;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            text-transform: uppercase;
+        }
+
+        .btn-ghost-glass:hover {
+            background: linear-gradient(135deg, rgba(0, 221, 221, 0.8) 0%, rgba(107, 19, 175, 0.8) 100%);
+            color: #ffffff;
+            border-color: transparent;
+            box-shadow: 0 0 20px rgba(107, 19, 175, 0.4);
+        }
+
+        .btn-secondary-glass {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid transparent;
+            color: #d6e4f7;
+            transition: all 0.3s ease;
+        }
+
+        .btn-secondary-glass:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(0, 221, 221, 0.3);
+        }
+
+        /* Custom Scrollbar for Textareas */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(0,0,0,0.2);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(0, 221, 221, 0.3);
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 221, 221, 0.6);
+        }
+        
+        .aurora-glow {
+            box-shadow: 0 0 30px rgba(107, 19, 175, 0.6), inset 0 0 20px rgba(0, 221, 221, 0.4);
+        }
+    </style>
+</head>
+<body class="font-body-md text-body-md antialiased min-h-screen flex flex-col md:flex-row overflow-x-hidden flex flex-col min-h-screen">
+<!-- Sidebar Navigation (Desktop) -->
+<aside class="hidden md:flex flex-col w-64 h-screen fixed left-0 top-0 glass-panel border-l-0 border-t-0 border-b-0 border-r border-outline-variant/30 z-40">
+<div class="p-stack-md flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-container text-3xl" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+<span class="font-display text-h3 font-bold tracking-tighter text-primary">Neon-Glass</span>
+</div>
+<div class="px-stack-md py-stack-sm text-on-surface-variant font-label-caps text-label-caps uppercase tracking-widest mt-stack-md">
+            Vault Management
+        </div>
+<nav class="flex flex-col gap-unit px-stack-sm mt-stack-sm flex-grow">
+<a class="flex items-center gap-3 px-stack-sm py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-button text-button">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-stack-sm py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">inventory_2</span>
+<span class="font-button text-button">All Artifacts</span>
+</a>
+<a class="flex items-center gap-3 px-stack-sm py-3 rounded-lg text-primary bg-secondary-container/20 border-l-2 border-primary-fixed-dim transition-all" href="#">
+<span class="material-symbols-outlined text-primary-fixed-dim" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span class="font-button text-button">Add Artifact</span>
+</a>
+<a class="flex items-center gap-3 px-stack-sm py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">category</span>
+<span class="font-button text-button">Categories</span>
+</a>
+<a class="flex items-center gap-3 px-stack-sm py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">group</span>
+<span class="font-button text-button">Users</span>
+</a>
+<a class="flex items-center gap-3 px-stack-sm py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-button text-button">Settings</span>
+</a>
+</nav>
+<div class="p-stack-md mt-auto border-t border-outline-variant/30">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-surface-container-high border border-primary-fixed-dim/50 flex items-center justify-center overflow-hidden">
+<span class="material-symbols-outlined text-on-surface">shield_person</span>
+</div>
+<div>
+<div class="font-button text-button text-primary">Admin_01</div>
+<div class="font-label-caps text-label-caps text-on-surface-variant">System Override</div>
+</div>
+</div>
+</div>
+</aside>
+<!-- Top Navigation Shell (Mobile) -->
+<header class="md:hidden flex justify-between items-center px-gutter py-unit h-16 z-50 bg-surface/10 backdrop-blur-md backdrop-blur-xl border-b border-outline-variant/20 shadow-[0_0_15px_rgba(0,221,221,0.1)] fixed top-0 w-full">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container text-2xl" style="font-variation-settings: 'FILL' 1;">hexagon</span>
+<span class="font-display text-h3 font-bold tracking-tighter text-primary dark:text-primary">Neon-Glass</span>
+</div>
+<button class="text-primary p-2">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<!-- Main Canvas -->
+<main class="flex-1 md:ml-64 pt-20 md:pt-margin px-gutter md:px-margin pb-32 max-w-container-max mx-auto w-full flex-grow">
+<div class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
+<div>
+<h1 class="font-h1 text-h1 text-primary mb-unit">Forge New Artifact</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Input technical specifications to register a new item in the Neon-Glass network.</p>
+</div>
+<div class="flex gap-stack-sm">
+<button class="btn-secondary-glass px-6 py-3 rounded-lg font-button text-button">Cancel</button>
+<button class="btn-ghost-glass px-8 py-3 rounded-lg font-button text-button flex items-center gap-2 aurora-glow">
+<span class="material-symbols-outlined text-lg">memory</span>
+                    Forge Artifact
+                </button>
+</div>
+</div>
+<!-- Main Form Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Core Data -->
+<div class="lg:col-span-8 flex flex-col gap-gutter">
+<!-- Primary Information Panel -->
+<section class="glass-panel rounded-xl p-stack-lg glass-panel-interactive">
+<h2 class="font-h3 text-h3 text-primary mb-stack-md flex items-center gap-2 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-primary-container">info</span>
+                        Core Specifications
+                    </h2>
+<div class="space-y-stack-md mt-stack-sm">
+<!-- Product Name -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Designation / Artifact Name</label>
+<input class="glass-input w-full p-3 font-body-lg text-body-lg" placeholder="e.g. Quantum Interface Module v2" type="text" value="Axiom Visualizer Core"/>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<!-- Category -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Classification Node</label>
+<select class="glass-select w-full p-3 rounded font-body-md text-body-md">
+<option>Cyberware</option>
+<option selected="">Neural Interfaces</option>
+<option>Visual Augmentation</option>
+<option>Tactile Feedback</option>
+</select>
+</div>
+<!-- Status -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Network Status</label>
+<select class="glass-select w-full p-3 rounded font-body-md text-body-md">
+<option selected="">Active Listing</option>
+<option>Draft Mode</option>
+<option>Archived</option>
+</select>
+</div>
+</div>
+<!-- Description -->
+<div>
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2">Data Packet Description</label>
+<textarea class="glass-input w-full p-3 h-32 font-body-md text-body-md resize-none" placeholder="Enter detailed specifications and usage protocols..."></textarea>
+</div>
+</div>
+</section>
+<!-- Technical Metadata Section (Dynamic Key-Value Pairs) -->
+<section class="glass-panel rounded-xl p-stack-lg glass-panel-interactive">
+<div class="flex justify-between items-center mb-stack-md border-b border-outline-variant/30 pb-2">
+<h2 class="font-h3 text-h3 text-primary flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-container">data_object</span>
+                            Technical Metadata
+                        </h2>
+<button class="btn-secondary-glass p-2 rounded-full flex items-center justify-center text-primary-fixed-dim hover:text-primary">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+<div class="space-y-stack-sm">
+<!-- Key Value Row 1 -->
+<div class="flex gap-3 items-start">
+<div class="w-1/3">
+<input class="glass-input w-full p-2 font-body-md text-body-md text-on-surface-variant" type="text" value="Neural Core"/>
+</div>
+<div class="w-2/3 flex gap-2">
+<input class="glass-input w-full p-2 font-body-md text-body-md text-primary" type="text" value="Optic-Bypass v4.2"/>
+<button class="text-outline hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Key Value Row 2 -->
+<div class="flex gap-3 items-start">
+<div class="w-1/3">
+<input class="glass-input w-full p-2 font-body-md text-body-md text-on-surface-variant" type="text" value="Chassis Finish"/>
+</div>
+<div class="w-2/3 flex gap-2">
+<input class="glass-input w-full p-2 font-body-md text-body-md text-primary" type="text" value="Matte Obsidian / Cyan Trim"/>
+<button class="text-outline hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+<!-- Key Value Row 3 -->
+<div class="flex gap-3 items-start">
+<div class="w-1/3">
+<input class="glass-input w-full p-2 font-body-md text-body-md text-on-surface-variant" placeholder="Parameter Key" type="text"/>
+</div>
+<div class="w-2/3 flex gap-2">
+<input class="glass-input w-full p-2 font-body-md text-body-md text-primary" placeholder="Parameter Value" type="text"/>
+<button class="text-outline hover:text-error transition-colors p-2">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing & Inventory -->
+<section class="glass-panel rounded-xl p-stack-lg glass-panel-interactive grid grid-cols-1 md:grid-cols-2 gap-stack-md">
+<div>
+<h2 class="font-h3 text-h3 text-primary mb-stack-md flex items-center gap-2 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-primary-container">monetization_on</span>
+                            Exchange Value
+                        </h2>
+<div class="relative mt-stack-sm">
+<span class="absolute left-3 top-3 text-primary-fixed-dim font-h3">¢</span>
+<input class="glass-input w-full p-3 pl-8 font-h2 text-h2 text-primary-fixed-dim glowing-text" type="number" value="2450.00"/>
+</div>
+</div>
+<div>
+<h2 class="font-h3 text-h3 text-primary mb-stack-md flex items-center gap-2 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-primary-container">inventory</span>
+                            Stock Units
+                        </h2>
+<div class="mt-stack-sm">
+<input class="glass-input w-full p-3 font-h3 text-h3" type="number" value="14"/>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Media Upload -->
+<div class="lg:col-span-4 flex flex-col gap-gutter">
+<section class="glass-panel rounded-xl p-stack-lg glass-panel-interactive h-full flex flex-col">
+<h2 class="font-h3 text-h3 text-primary mb-stack-md flex items-center gap-2 border-b border-outline-variant/30 pb-2">
+<span class="material-symbols-outlined text-primary-container">image</span>
+                        Visual Data
+                    </h2>
+<!-- Primary Upload Zone -->
+<div class="border-2 border-dashed border-primary-fixed-dim/30 rounded-xl p-stack-md flex flex-col items-center justify-center text-center bg-surface-container/30 hover:bg-surface-container/50 hover:border-primary-fixed-dim transition-all cursor-pointer mb-stack-md group min-h-[200px]">
+<span class="material-symbols-outlined text-4xl text-outline group-hover:text-primary-fixed-dim mb-3 transition-colors">cloud_upload</span>
+<p class="font-body-md text-body-md text-on-surface mb-1">Drag &amp; Drop Holograms</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant">or click to browse local files</p>
+</div>
+<!-- Image Grid -->
+<div class="grid grid-cols-2 gap-stack-sm flex-grow">
+<!-- Image 1 -->
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/50 group aspect-square">
+<img alt="A detailed close-up of a futuristic neural interface component, featuring intricate glowing cyan circuitry etched onto a matte black metallic surface. The component is slightly blurred around the edges, emphasizing depth of field in a moody, low-key lighting environment typical of a cyberpunk high-tech laboratory." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0uhN5co7EVf8fG4cOFcIhlib4jylCSOEDMumrGYrli0OThj3EfZo-qqnWg1WAFNS03Rr7o8vL8UyF1YayXr3X1WAUPVd_dooqOnI3M7hcwQnHNEJ1Hc9klSSrUUuoyij5nmPise9Vmrnt9lk7DTWnXgXrnqJkm8bKP0qqGNI-uRCQoujd4LxGpXFy8uXwLyfQ3sayta8ZcZDmk7UoHJGFztUKqgs_ccauT0xDFbjTK4bT4t4wQaeimZ0CL6y"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="p-2 bg-error/20 text-error rounded-full hover:bg-error hover:text-black transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+<button class="p-2 bg-primary/20 text-primary rounded-full hover:bg-primary hover:text-black transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+<div class="absolute top-2 left-2 bg-secondary-container/80 backdrop-blur-md text-primary px-2 py-1 rounded text-xs font-label-caps border border-primary-fixed-dim/50">Primary</div>
+</div>
+<!-- Image 2 -->
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/50 group aspect-square">
+<img alt="A sleek, minimalist cybernetic optical implant resting on a dark, reflective glass surface. The device emits a faint, pulsing aura of neon purple light, contrasting sharply against the pitch-black background. Sharp geometric lines define its chassis, lit by a single, cool white spotlight from above, creating a stark, premium tech aesthetic." class="w-full h-full object-cover" src="https://mcsolution.com.bd/wp-content/uploads/2024/08/Google-Pixel-9-2024-Obsidian-Price-in-Bangladesh-MC-Solution-BD-1200x900.webp"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="p-2 bg-error/20 text-error rounded-full hover:bg-error hover:text-black transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+<button class="p-2 bg-primary/20 text-primary rounded-full hover:bg-primary hover:text-black transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+<!-- Image 3 -->
+<div class="relative rounded-lg overflow-hidden border border-outline-variant/50 group aspect-square">
+<img alt="An abstract, high-contrast digital rendering showing a network of glowing cyan and magenta data streams flowing across a dark grid. The streams appear as sharp, crystalline structures, conveying a sense of rapid data transfer and advanced computational processing in a dark-mode, futuristic environment." class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida/ADBb0ugk-pMYOtUug_Kw9aHQkB6-rtrKqXwkoaGdpZifpNfWZHWHp72LV8Lx03a8IoOD__27z_-TyQOdIBNufxjKRz69Eq2ElUsMS2oP0cBh4ZhR6dsIG913ltYs_eTUvzpin3I2Jw5eYA3LQ-HSyJqvtP0OA8q6iv5KCa__uYfacBNf-yZAoatvJ1cPCyQtM-deAfEnpauaLNpGGLT-GePBHJbq-j8qBl-SUvS6O1RBEQDaW7eYy8rcw0iWHjL3"/>
+<div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-2">
+<button class="p-2 bg-error/20 text-error rounded-full hover:bg-error hover:text-black transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">delete</span>
+</button>
+<button class="p-2 bg-primary/20 text-primary rounded-full hover:bg-primary hover:text-black transition-colors backdrop-blur-md">
+<span class="material-symbols-outlined text-sm">visibility</span>
+</button>
+</div>
+</div>
+<!-- Add More Button -->
+<div class="border border-dashed border-outline-variant/50 rounded-lg flex items-center justify-center text-outline hover:text-primary-fixed-dim hover:border-primary-fixed-dim transition-colors cursor-pointer aspect-square bg-white/5">
+<span class="material-symbols-outlined text-3xl">add_photo_alternate</span>
+</div>
+</div>
+</section>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Mobile) -->
+<nav class="md:hidden flex flex-col justify-end fixed bottom-0 w-full z-50">
+<div class="fixed bottom-6 left-1/2 -translate-x-1/2 w-max px-stack-lg rounded-full border border-outline-variant/50 shadow-[0_-4px_20px_rgba(107,19,175,0.2)] flex gap-stack-md items-center p-2 z-50 bg-surface-container/20 backdrop-blur-lg backdrop-blur-2xl">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="index.html">
+<span class="material-symbols-outlined text-2xl">home</span>
+<span class="font-label-caps text-label-caps mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="products.html">
+<span class="material-symbols-outlined text-2xl">grid_view</span>
+<span class="font-label-caps text-label-caps mt-1">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed-dim bg-secondary-container/40 rounded-full p-2 scale-90 duration-200" href="#">
+<span class="material-symbols-outlined text-2xl" style="font-variation-settings: 'FILL' 1;">add_box</span>
+<span class="font-label-caps text-label-caps mt-1">Forge</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="profile.html">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="font-label-caps text-label-caps mt-1">Profile</span>
+</a>
+</div>
+</nav>
+<app-footer></app-footer>
+<script src="components.js"></script>
+</body></html>
+
+

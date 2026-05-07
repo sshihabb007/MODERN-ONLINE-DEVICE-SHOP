@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neon-Glass Axiom - Cart &amp; Checkout</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#243240",
+                        "secondary-container": "#6b13af",
+                        "inverse-surface": "#d6e4f7",
+                        "primary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#007070",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "tertiary": "#ffffff",
+                        "outline": "#839493",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#020f1c",
+                        "secondary-fixed": "#f1dbff",
+                        "surface-tint": "#00dddd",
+                        "surface-container": "#13212e",
+                        "on-primary": "#003737",
+                        "tertiary-container": "#e5e2e1",
+                        "on-primary-fixed": "#002020",
+                        "surface-dim": "#061422",
+                        "secondary": "#deb7ff",
+                        "on-surface-variant": "#b9cac9",
+                        "surface": "#061422",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-high": "#1e2b39",
+                        "on-secondary": "#4a007f",
+                        "surface-container-highest": "#293644",
+                        "primary": "#ffffff",
+                        "surface-variant": "#293644",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#d4a5ff",
+                        "primary-fixed": "#00fbfb",
+                        "on-background": "#d6e4f7",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00fbfb",
+                        "on-secondary-fixed": "#2d0050",
+                        "outline-variant": "#3a4a49",
+                        "on-tertiary-container": "#656464",
+                        "inverse-primary": "#006a6a",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#0f1d2a",
+                        "surface-bright": "#2d3a49",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#680eac",
+                        "on-surface": "#d6e4f7",
+                        "on-error": "#690005",
+                        "background": "#061422",
+                        "secondary-fixed-dim": "#deb7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin": "48px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "h1": ["Space Grotesk"],
+                        "button": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 221, 221, 0.2);
+        }
+        .glass-modal {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 221, 221, 0.5);
+            box-shadow: 0 0 15px rgba(0, 221, 221, 0.1);
+        }
+        .ghost-button {
+            background: transparent;
+            border: 1px solid rgba(0, 221, 221, 0.5);
+            transition: all 0.3s ease;
+        }
+        .ghost-button:hover {
+            background: linear-gradient(90deg, rgba(0, 221, 221, 0.2) 0%, rgba(107, 19, 175, 0.2) 100%);
+            border-color: rgba(0, 221, 221, 1);
+            box-shadow: 0 0 15px rgba(0, 221, 221, 0.3);
+        }
+        .cyber-input {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0, 221, 221, 0.5);
+            transition: all 0.3s ease;
+        }
+        .cyber-input:focus {
+            outline: none;
+            border: 1px solid rgba(0, 221, 221, 0.8);
+            box-shadow: 0 0 10px rgba(0, 221, 221, 0.2);
+        }
+        .cyber-checkbox {
+            appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 1px solid rgba(0, 221, 221, 0.5);
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+        }
+        .cyber-checkbox:checked {
+            background: rgba(0, 221, 221, 0.2);
+            border-color: rgba(0, 221, 221, 1);
+        }
+        .cyber-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            width: 10px;
+            height: 10px;
+            background: #00dddd;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden selection:bg-primary-fixed-dim/30 selection:text-primary flex flex-col min-h-screen">
+<top-app-bar></top-app-bar>
+<!-- Main Content Canvas -->
+<main class="max-w-container-max mx-auto px-gutter pt-[100px] md:pt-[120px] pb-[100px] flex-grow">
+<!-- Progress Stepper -->
+<div class="mb-stack-lg flex items-center justify-center">
+<div class="flex items-center space-x-4">
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full bg-primary-fixed-dim flex items-center justify-center text-on-primary-fixed-variant font-label-caps shadow-[0_0_10px_rgba(0,221,221,0.5)]">1</div>
+<span class="font-label-caps text-primary-fixed-dim mt-2">CART</span>
+</div>
+<div class="h-[1px] w-16 bg-primary-fixed-dim/50"></div>
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full border border-primary-fixed-dim/50 bg-surface flex items-center justify-center text-on-surface-variant font-label-caps">2</div>
+<span class="font-label-caps text-on-surface-variant mt-2">SHIPPING</span>
+</div>
+<div class="h-[1px] w-16 bg-outline-variant/50"></div>
+<div class="flex flex-col items-center">
+<div class="w-8 h-8 rounded-full border border-outline-variant/50 bg-surface flex items-center justify-center text-on-surface-variant font-label-caps">3</div>
+<span class="font-label-caps text-on-surface-variant mt-2">PAYMENT</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-gutter">
+<!-- Left Column: Cart Items -->
+<div class="lg:col-span-7 space-y-stack-md">
+<h1 class="font-h2 text-h2 text-primary mb-stack-md">Secure Checkout</h1>
+<div class="glass-panel p-stack-md rounded-xl space-y-stack-md">
+<!-- Item 1 -->
+<div class="flex gap-stack-md items-center border-b border-outline-variant/20 pb-stack-md">
+<div class="w-24 h-24 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
+<img alt="Cart Item 1" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0xFeubs8DCKAECNXX9FQvR6kCc6e9tAUc3XGJjK6mmtFtK7yObwxlNXFPq4kaOZoFwnUptajRsaSASKl8TdEempu7DMMONrhHQjkShHK9Z0NNbjkGiIHkXc05Xzas0hlkZrKpBQEnIvsGt5fjysmfRTsWqFu3rDXKVoWY_z9xzKFZG2M_DgqKKXnqcG16cOQ6nmSxurp7s5698ujrfLA5Io6r_HgYe_nqX5EKF-mgBODx_yS3Zus3gJ9d4ZTwyu5xMgJJAfp5DaoN"/>
+</div>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-primary">Axiom G-700 Ultra</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit">Titanium Chassis • 32GB RAM</p>
+</div>
+<div class="text-right">
+<div class="font-h3 text-h3 text-primary-fixed-dim">$2,499.00</div>
+<div class="flex items-center gap-unit mt-unit justify-end">
+<button class="w-6 h-6 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="font-body-md text-body-md w-6 text-center">1</span>
+<button class="w-6 h-6 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex gap-stack-md items-center">
+<div class="w-24 h-24 rounded-lg overflow-hidden relative">
+<div class="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10"></div>
+<img alt="Cart Item 2" class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB45YZKTpCD3_sr5yAf8EXcnIgg0jp2SEZAvlrLdIfb-Txdhr9UxXNppLtVjdCKQHExtYBCoxg3hLuQW5qua7hhiGtDw1LfsdgZO9GYETBubv0lto5RP2_HLSW6wckkAPMOMCXS0bOqUhhxvGV0FwoduGfchnWBd4e_vM9qPAIctBS1us6ug4z1SXvE0cuWrAaGJvuvNPaZvOge_Y5iUUCc_CQg5AfT_A_xHLjYlsiszoPgqHyBjsxDaOb3LphZRcIzL9MjFTikgxsd"/>
+</div>
+<div class="flex-1">
+<h3 class="font-h3 text-h3 text-primary">Nexus S-Core Phone</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mt-unit">Liquid Metal • 1TB Storage</p>
+</div>
+<div class="text-right">
+<div class="font-h3 text-h3 text-primary-fixed-dim">$1,199.00</div>
+<div class="flex items-center gap-unit mt-unit justify-end">
+<button class="w-6 h-6 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">remove</span></button>
+<span class="font-body-md text-body-md w-6 text-center">1</span>
+<button class="w-6 h-6 rounded-full border border-outline-variant/50 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors"><span class="material-symbols-outlined text-[16px]">add</span></button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Shipping & Summary -->
+<div class="lg:col-span-5 space-y-stack-md">
+<!-- Shipping Form -->
+<div class="glass-modal p-stack-md rounded-xl">
+<h2 class="font-h3 text-h3 text-primary mb-stack-md flex items-center gap-unit">
+<span class="material-symbols-outlined text-primary-fixed-dim">local_shipping</span>
+                        Shipping Information
+                    </h2>
+<form class="space-y-stack-sm">
+<div class="grid grid-cols-2 gap-stack-sm">
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-unit">First Name</label>
+<input class="cyber-input w-full p-2 text-primary font-body-md" placeholder="Cipher" type="text"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-unit">Last Name</label>
+<input class="cyber-input w-full p-2 text-primary font-body-md" placeholder="Protocol" type="text"/>
+</div>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-unit">Email Address</label>
+<input class="cyber-input w-full p-2 text-primary font-body-md" placeholder="cipher@neon-axiom.net" type="email"/>
+</div>
+<div>
+<label class="font-label-caps text-label-caps text-on-surface-variant block mb-unit">Delivery Address</label>
+<input class="cyber-input w-full p-2 text-primary font-body-md" placeholder="101 Sector Grid" type="text"/>
+</div>
+<div class="pt-stack-sm flex items-center gap-unit">
+<input class="cyber-checkbox" id="save-info" type="checkbox"/>
+<label class="font-body-md text-body-md text-on-surface-variant cursor-pointer" for="save-info">Save this profile to my digital vault</label>
+</div>
+</form>
+</div>
+<!-- Order Summary -->
+<div class="glass-panel p-stack-md rounded-xl">
+<h2 class="font-h3 text-h3 text-primary mb-stack-md">Order Summary</h2>
+<div class="space-y-stack-sm border-b border-outline-variant/30 pb-stack-sm">
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Subtotal</span>
+<span class="font-body-md text-body-md text-primary">$3,698.00</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Encrypted Shipping</span>
+<span class="font-body-md text-body-md text-primary-fixed-dim">Free</span>
+</div>
+<div class="flex justify-between">
+<span class="font-body-md text-body-md text-on-surface-variant">Taxes (Est)</span>
+<span class="font-body-md text-body-md text-primary">$184.90</span>
+</div>
+</div>
+<div class="flex justify-between items-center py-stack-md">
+<span class="font-h3 text-h3 text-primary">Total</span>
+<span class="font-h2 text-h2 text-primary-fixed-dim tracking-tight">$3,882.90</span>
+</div>
+<button class="ghost-button w-full py-stack-sm rounded-lg font-button text-button text-primary-fixed-dim uppercase tracking-wider flex items-center justify-center gap-unit">
+                        Proceed to Payment
+                        <span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="mt-stack-sm text-center flex items-center justify-center gap-unit opacity-70">
+<span class="material-symbols-outlined text-[16px]">lock</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">AES-256 Bit Encryption</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar -->
+<bottom-nav-bar></bottom-nav-bar>
+<app-footer></app-footer>
+<script src="components.js"></script>
+</body></html>
+

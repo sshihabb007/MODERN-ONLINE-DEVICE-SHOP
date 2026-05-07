@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Meet the Architect - Neon-Glass Axiom</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-primary": "#003737",
+                        "surface-variant": "#293644",
+                        "outline-variant": "#3a4a49",
+                        "outline": "#839493",
+                        "on-error": "#690005",
+                        "primary-fixed-dim": "#00dddd",
+                        "primary": "#ffffff",
+                        "on-secondary": "#4a007f",
+                        "secondary-fixed": "#f1dbff",
+                        "on-tertiary": "#313030",
+                        "on-background": "#d6e4f7",
+                        "tertiary": "#ffffff",
+                        "on-primary-fixed": "#002020",
+                        "inverse-primary": "#006a6a",
+                        "surface": "#061422",
+                        "secondary": "#deb7ff",
+                        "surface-container-highest": "#293644",
+                        "on-secondary-fixed-variant": "#680eac",
+                        "background": "#061422",
+                        "tertiary-container": "#e5e2e1",
+                        "primary-container": "#00fbfb",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "on-primary-container": "#007070",
+                        "inverse-surface": "#d6e4f7",
+                        "surface-bright": "#2d3a49",
+                        "secondary-container": "#6b13af",
+                        "on-error-container": "#ffdad6",
+                        "inverse-on-surface": "#243240",
+                        "on-surface": "#d6e4f7",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "secondary-fixed-dim": "#deb7ff",
+                        "error": "#ffb4ab",
+                        "surface-tint": "#00dddd",
+                        "surface-container-lowest": "#020f1c",
+                        "tertiary-fixed": "#e5e2e1",
+                        "primary-fixed": "#00fbfb",
+                        "surface-container-high": "#1e2b39",
+                        "on-secondary-container": "#d4a5ff",
+                        "surface-dim": "#061422",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-surface-variant": "#b9cac9",
+                        "surface-container-low": "#0f1d2a",
+                        "surface-container": "#13212e",
+                        "error-container": "#93000a",
+                        "on-tertiary-container": "#656464",
+                        "on-secondary-fixed": "#2d0050"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-lg": "48px",
+                        "stack-md": "24px",
+                        "stack-sm": "12px",
+                        "margin": "48px",
+                        "container-max": "1440px",
+                        "unit": "4px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "h1": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "button": ["Space Grotesk"],
+                        "h3": ["Space Grotesk"],
+                        "h2": ["Space Grotesk"],
+                        "display": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 221, 221, 0.2);
+        }
+        .glass-modal {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(0, 221, 221, 0.5);
+            box-shadow: 0 0 15px rgba(0, 221, 221, 0.1);
+        }
+        .refractive-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(0, 221, 221, 0.5), transparent);
+        }
+        .hover-glow:hover {
+            border-color: rgba(0, 221, 221, 1);
+            box-shadow: inset 0 0 10px rgba(107, 19, 175, 0.5);
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(0, 221, 221, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen overflow-x-hidden antialiased selection:bg-primary-fixed-dim selection:text-on-primary flex flex-col min-h-screen">
+<!-- Top Navigation Container -->
+<top-app-bar></top-app-bar>
+<!-- Main Content Canvas -->
+<main class="pt-[120px] pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
+<!-- Hero Section -->
+<section class="mb-24 flex flex-col md:flex-row gap-stack-lg items-center mt-12">
+<div class="flex-1 space-y-stack-md z-10">
+<div class="inline-block px-4 py-1 rounded-full bg-secondary-container/20 text-secondary-fixed-dim font-label-caps text-label-caps border border-secondary-container/50">
+                    System Architecture
+                </div>
+<h1 class="font-display text-display text-primary text-glow">Mehedi Hasan Shihab</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">
+                    Senior Software Engineer &amp; Full-Stack Developer. Forging high-fidelity digital infrastructure and engineering the future of elite e-commerce systems.
+                </p>
+<div class="flex gap-stack-sm pt-4">
+<button class="glass-panel font-button text-button text-primary-fixed-dim border-primary-fixed-dim px-6 py-3 rounded-lg hover:bg-gradient-to-r hover:from-primary-fixed-dim hover:to-secondary-container hover:text-primary hover:border-transparent transition-all duration-300 flex items-center gap-2 hover-glow">
+<span class="material-symbols-outlined text-[18px]">terminal</span>
+                        View GitHub Matrix
+                    </button>
+<button class="glass-panel border-transparent font-button text-button text-primary px-6 py-3 rounded-lg hover:bg-white/10 transition-all duration-300 flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">hub</span>
+                        LinkedIn Network
+                    </button>
+</div>
+</div>
+<div class="w-full md:w-1/3 relative z-10">
+<div class="glass-modal p-2 rounded-2xl relative group overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-br from-primary-fixed-dim/10 to-secondary-container/10 opacity-50 group-hover:opacity-100 transition-opacity duration-500"></div>
+<img alt="Mehedi Hasan Shihab Profile" class="w-full aspect-[3/4] object-cover rounded-xl filter grayscale contrast-125 brightness-90 group-hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida/ADBb0ugk-pMYOtUug_Kw9aHQkB6-rtrKqXwkoaGdpZifpNfWZHWHp72LV8Lx03a8IoOD__27z_-TyQOdIBNufxjKRz69Eq2ElUsMS2oP0cBh4ZhR6dsIG913ltYs_eTUvzpin3I2Jw5eYA3LQ-HSyJqvtP0OA8q6iv5KCa__uYfacBNf-yZAoatvJ1cPCyQtM-deAfEnpauaLNpGGLT-GePBHJbq-j8qBl-SUvS6O1RBEQDaW7eYy8rcw0iWHjL3"/>
+<div class="absolute bottom-6 left-6 glass-panel px-4 py-2 rounded-lg border-l-2 border-l-primary-fixed-dim flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></span>
+<span class="font-label-caps text-label-caps text-primary">System Online</span>
+</div>
+</div>
+<!-- Ambient Glow Behind Image -->
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 bg-primary-fixed-dim/20 blur-[80px] -z-10 rounded-full pointer-events-none"></div>
+</div>
+</section>
+<div class="refractive-divider mb-24"></div>
+<!-- The Mission -->
+<section class="mb-24 relative">
+<!-- Decorative Background Image -->
+<div class="absolute -right-24 top-0 w-1/2 h-full opacity-10 pointer-events-none -z-10">
+<img alt="Abstract Tech Background" class="w-full h-full object-cover rounded-3xl mix-blend-screen filter blur-sm" src="https://mcsolution.com.bd/wp-content/uploads/2024/08/Google-Pixel-9-2024-Obsidian-Price-in-Bangladesh-MC-Solution-BD-1200x900.webp"/>
+</div>
+<div class="max-w-3xl">
+<h2 class="font-h2 text-h2 text-primary mb-stack-md flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">radar</span>
+                    The Mission
+                </h2>
+<div class="glass-panel p-8 rounded-xl border-l-4 border-l-secondary-container relative overflow-hidden">
+<div class="absolute top-0 right-0 p-4 opacity-20">
+<span class="material-symbols-outlined text-[120px] leading-none text-primary-fixed-dim">api</span>
+</div>
+<p class="font-body-lg text-body-lg text-on-surface-variant relative z-10">
+                        Architecting robust, scalable backends and immersive front-end experiences. The focus is on bridging complex data models with intuitive, high-performance user interfaces. It's not just about writing code; it's about constructing a flawless digital ecosystem where security, speed, and elegance converge.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Technical Proficiencies (Bento Grid) -->
+<section class="mb-24">
+<h2 class="font-h2 text-h2 text-primary mb-stack-md flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">memory</span>
+                Technical Proficiencies
+            </h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-stack-md">
+<!-- Node 1 -->
+<div class="glass-panel p-6 rounded-xl hover-glow transition-all duration-300 group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[32px] group-hover:scale-110 transition-transform">code_blocks</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim bg-secondary-container/20 px-2 py-1 rounded">Front-End Core</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">React.js Ecosystem</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Building dynamic, responsive interfaces with precise state management and component-driven architecture.</p>
+</div>
+<!-- Node 2 -->
+<div class="glass-panel p-6 rounded-xl hover-glow transition-all duration-300 group md:col-span-2 relative overflow-hidden">
+<img alt="Server Infrastructure Abstract" class="absolute inset-0 w-full h-full object-cover opacity-10 mix-blend-luminosity" src="https://lh3.googleusercontent.com/aida/ADBb0ugshtVEcZ8K8aYHuxXvvo9emkZ2p7VREC1bIiov8Pr7PSVLXhNt2JnRlcCghHMKr-ReUI54eSlX60qyy1Q7ziGT9PQnngHG0K0dVgH79A7xQ0hM6G5FsogrnAoYgeGeXEenheeGCj9pgFulC5zFd6sgrfl9KMKuOjs6MCxO1mR_wxYraheCGaBG39SAYXjuDbR3iUoo-dOWJ0PKv3GobdtSwOcllThiNfGJQH_dcdoyBLGZjI5hRVkvU8M"/>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[32px] group-hover:scale-110 transition-transform">dns</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim bg-secondary-container/20 px-2 py-1 rounded">Backend &amp; DB</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Node.js &amp; PHP Infrastructure</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Designing scalable RESTful APIs and robust data pipelines to power heavy-load applications securely.</p>
+</div>
+</div>
+<!-- Node 3 -->
+<div class="glass-panel p-6 rounded-xl hover-glow transition-all duration-300 group md:col-span-2 relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-transparent to-primary-fixed-dim/5"></div>
+<div class="relative z-10">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[32px] group-hover:scale-110 transition-transform">smart_toy</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim bg-secondary-container/20 px-2 py-1 rounded">Intelligence</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">AI / Machine Learning Integration</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Implementing advanced algorithms to create adaptive, intelligent systems that evolve with user interaction.</p>
+</div>
+</div>
+<!-- Node 4 -->
+<div class="glass-panel p-6 rounded-xl hover-glow transition-all duration-300 group">
+<div class="flex justify-between items-start mb-4">
+<span class="material-symbols-outlined text-primary-fixed-dim text-[32px] group-hover:scale-110 transition-transform">cloud_sync</span>
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim bg-secondary-container/20 px-2 py-1 rounded">Deployment</span>
+</div>
+<h3 class="font-h3 text-h3 text-primary mb-2">Cloud Operations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Ensuring high availability and seamless CI/CD pipelines across distributed environments.</p>
+</div>
+</div>
+</section>
+<div class="refractive-divider mb-24"></div>
+<!-- The Vault's History (Projects) -->
+<section class="mb-24">
+<h2 class="font-h2 text-h2 text-primary mb-stack-lg flex items-center gap-4">
+<span class="material-symbols-outlined text-primary-fixed-dim">history_toggle_off</span>
+                The Vault's Archives
+            </h2>
+<div class="space-y-stack-md relative before:content-[''] before:absolute before:left-8 before:top-0 before:bottom-0 before:w-[1px] before:bg-outline-variant/30">
+<!-- Project 1 -->
+<div class="relative pl-24 group">
+<div class="absolute left-[28px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-surface border-2 border-primary-fixed-dim z-10 group-hover:bg-primary-fixed-dim transition-colors shadow-[0_0_10px_rgba(0,221,221,0.5)]"></div>
+<div class="glass-panel p-6 rounded-xl group-hover:border-primary-fixed-dim/50 transition-colors flex flex-col md:flex-row gap-stack-md items-center">
+<div class="flex-1">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim mb-2 block">Alpha Protocol</span>
+<h3 class="font-h3 text-h3 text-primary mb-2">AI English Test Assistance</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">An intelligent platform utilizing NLP to evaluate and enhance language proficiency in real-time.</p>
+</div>
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden relative">
+<img alt="AI Interface Snapshot" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0ugIPenP46UGWNl0caGNtH_wV2JSmvVkz6Dw4qtoW4or0gFqFqKnWVp289ZQs4vdoCtcl06yCLa8o29ODTTz8nPhDleAbGlogSUNESaE24qdCYNhoS08ZOwi4WwTaGcRN5QrEYYvcwxlXUmuQtb8sMPJI-eqYlWMbeKpIyvxxn178pNCl-PnSSV0mtRVhfQbkWTvvJZfXUiPGwtnGKVWDA4EezFHQdDjvnYl5JpRnjmz5jBK72UyFBEfsJAX"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="relative pl-24 group">
+<div class="absolute left-[28px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-surface border-2 border-primary-fixed-dim z-10 group-hover:bg-primary-fixed-dim transition-colors shadow-[0_0_10px_rgba(0,221,221,0.5)]"></div>
+<div class="glass-panel p-6 rounded-xl group-hover:border-primary-fixed-dim/50 transition-colors flex flex-col md:flex-row gap-stack-md items-center">
+<div class="flex-1">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim mb-2 block">Beta Node</span>
+<h3 class="font-h3 text-h3 text-primary mb-2">Hospital Management System</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A comprehensive administrative backend designed for secure patient data handling and resource optimization.</p>
+</div>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="relative pl-24 group">
+<div class="absolute left-[28px] top-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-surface border-2 border-primary-fixed-dim z-10 group-hover:bg-primary-fixed-dim transition-colors shadow-[0_0_10px_rgba(0,221,221,0.5)]"></div>
+<div class="glass-panel p-6 rounded-xl group-hover:border-primary-fixed-dim/50 transition-colors flex flex-col md:flex-row gap-stack-md items-center">
+<div class="flex-1">
+<span class="font-label-caps text-label-caps text-secondary-fixed-dim mb-2 block">Gamma Sector</span>
+<h3 class="font-h3 text-h3 text-primary mb-2">Online Smartphone Shop</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A high-conversion e-commerce platform featuring dynamic inventory tracking and secure payment gateways.</p>
+</div>
+<div class="w-full md:w-48 h-32 rounded-lg overflow-hidden relative">
+<img alt="E-Commerce Interface Snapshot" class="w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-500" src="https://lh3.googleusercontent.com/aida/ADBb0uhN5co7EVf8fG4cOFcIhlib4jylCSOEDMumrGYrli0OThj3EfZo-qqnWg1WAFNS03Rr7o8vL8UyF1YayXr3X1WAUPVd_dooqOnI3M7hcwQnHNEJ1Hc9klSSrUUuoyij5nmPise9Vmrnt9lk7DTWnXgXrnqJkm8bKP0qqGNI-uRCQoujd4LxGpXFy8uXwLyfQ3sayta8ZcZDmk7UoHJGFztUKqgs_ccauT0xDFbjTK4bT4t4wQaeimZ0CL6y"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-60"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Connection Request Section (Decorative Loader) -->
+<section class="mt-32 max-w-lg mx-auto text-center">
+<h3 class="font-label-caps text-label-caps text-primary-fixed-dim mb-4 tracking-widest uppercase">Initiate Connection Sequence</h3>
+<!-- Glitch Loader Simulation -->
+<div class="h-1 w-full bg-surface-variant rounded-full overflow-hidden mb-8 relative">
+<div class="absolute top-0 left-0 h-full w-1/3 bg-primary-fixed-dim animate-[pulse_2s_ease-in-out_infinite] shadow-[0_0_10px_rgba(0,221,221,0.8)]"></div>
+<div class="absolute top-0 left-1/2 h-full w-1/4 bg-secondary-container animate-[pulse_3s_ease-in-out_infinite] shadow-[0_0_10px_rgba(107,19,175,0.8)] mix-blend-screen"></div>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Awaiting handshake protocol from external client.</p>
+</section>
+</main>
+<!-- Bottom Navigation (Mobile) -->
+<nav class="fixed bottom-stack-md left-1/2 -translate-x-1/2 w-max px-stack-lg rounded-full border border-outline-variant/50 bg-surface-container/20 backdrop-blur-lg backdrop-blur-2xl border border-outline-variant/40 shadow-[0_-4px_20px_rgba(107,19,175,0.2)] fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-stack-md items-center p-2 z-50 md:hidden">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="index.html">
+<span class="material-symbols-outlined mb-1 text-[24px]">home</span>
+<span class="font-label-caps text-[10px]">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="products.html">
+<span class="material-symbols-outlined mb-1 text-[24px]">grid_view</span>
+<span class="font-label-caps text-[10px]">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="checkout.html">
+<span class="material-symbols-outlined mb-1 text-[24px]">shopping_bag</span>
+<span class="font-label-caps text-[10px]">Cart</span>
+</a>
+<!-- Active State -->
+<a class="flex flex-col items-center justify-center text-primary-fixed-dim bg-secondary-container/40 rounded-full p-2 scale-90 duration-200" href="profile.html">
+<span class="material-symbols-outlined mb-1 text-[24px]" style="font-variation-settings: 'FILL' 1;">person</span>
+<span class="font-label-caps text-[10px]">Profile</span>
+</a>
+</nav>
+<app-footer></app-footer>
+<script src="components.js"></script>
+</body></html>
+
+

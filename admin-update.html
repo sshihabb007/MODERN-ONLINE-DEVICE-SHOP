@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Update Device Info - Axiom Quantum Edge X</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#1e2b39",
+                        "background": "#061422",
+                        "on-secondary": "#4a007f",
+                        "inverse-on-surface": "#243240",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container": "#13212e",
+                        "on-background": "#d6e4f7",
+                        "surface-bright": "#2d3a49",
+                        "error-container": "#93000a",
+                        "primary-container": "#00fbfb",
+                        "on-primary-fixed": "#002020",
+                        "surface-container-highest": "#293644",
+                        "on-tertiary": "#313030",
+                        "tertiary": "#ffffff",
+                        "error": "#ffb4ab",
+                        "on-secondary-container": "#d4a5ff",
+                        "surface-container-low": "#0f1d2a",
+                        "secondary": "#deb7ff",
+                        "on-error-container": "#ffdad6",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "tertiary-container": "#e5e2e1",
+                        "secondary-fixed-dim": "#deb7ff",
+                        "surface": "#061422",
+                        "outline": "#839493",
+                        "on-primary": "#003737",
+                        "outline-variant": "#3a4a49",
+                        "surface-container-lowest": "#020f1c",
+                        "inverse-surface": "#d6e4f7",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-primary-container": "#007070",
+                        "primary-fixed-dim": "#00dddd",
+                        "primary-fixed": "#00fbfb",
+                        "on-secondary-fixed": "#2d0050",
+                        "on-secondary-fixed-variant": "#680eac",
+                        "on-tertiary-container": "#656464",
+                        "on-surface": "#d6e4f7",
+                        "secondary-fixed": "#f1dbff",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "inverse-primary": "#006a6a",
+                        "surface-variant": "#293644",
+                        "primary": "#ffffff",
+                        "on-error": "#690005",
+                        "surface-tint": "#00dddd",
+                        "surface-dim": "#061422",
+                        "secondary-container": "#6b13af",
+                        "on-surface-variant": "#b9cac9"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "stack-sm": "12px",
+                        "margin": "48px",
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "stack-lg": "48px",
+                        "container-max": "1440px",
+                        "stack-md": "24px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["Space Grotesk"],
+                        "h2": ["Space Grotesk"],
+                        "h1": ["Space Grotesk"],
+                        "button": ["Space Grotesk"],
+                        "h3": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom scrollbar for JSON editor */
+        .json-scroll::-webkit-scrollbar {
+            width: 8px;
+        }
+        .json-scroll::-webkit-scrollbar-track {
+            background: rgba(6, 20, 34, 0.5);
+            border-radius: 4px;
+        }
+        .json-scroll::-webkit-scrollbar-thumb {
+            background: rgba(0, 221, 221, 0.2);
+            border-radius: 4px;
+        }
+        .json-scroll::-webkit-scrollbar-thumb:hover {
+            background: rgba(0, 221, 221, 0.4);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
+<top-app-bar></top-app-bar>
+<!-- Main Content -->
+<main class="max-w-container-max mx-auto px-margin pt-[120px] pb-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-grow">
+<!-- Header Section -->
+<div class="col-span-1 lg:col-span-12 mb-stack-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<div class="flex items-center gap-2 mb-2">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm">arrow_back</span>
+<a class="font-button text-button text-on-surface-variant hover:text-primary transition-colors" href="#">Back to Inventory</a>
+</div>
+<h1 class="font-h1 text-h1 text-primary">Update Device Info</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Axiom Quantum Edge X // ID: AQE-X-992</p>
+</div>
+<div class="flex gap-4 w-full md:w-auto">
+<button class="flex-1 md:flex-none font-button text-button bg-white/5 text-on-background px-6 py-3 rounded-DEFAULT hover:bg-white/10 transition-colors backdrop-blur-md flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-sm">visibility</span>
+                    Preview on Storefront
+                </button>
+<button class="flex-1 md:flex-none font-button text-button border border-primary-fixed-dim text-primary-fixed-dim px-6 py-3 rounded-DEFAULT hover:bg-gradient-to-r hover:from-primary-fixed-dim hover:to-secondary-container hover:text-white hover:border-transparent transition-all duration-300 flex items-center justify-center gap-2 relative overflow-hidden group">
+<div class="absolute inset-0 bg-primary-fixed-dim/10 group-hover:opacity-0 transition-opacity"></div>
+<span class="material-symbols-outlined text-sm z-10">save</span>
+<span class="z-10">Save Changes</span>
+</button>
+</div>
+</div>
+<!-- Left Column: Product Render & Status (5 cols) -->
+<div class="col-span-1 lg:col-span-5 flex flex-col gap-gutter">
+<!-- Glass Container for Render -->
+<div class="relative w-full aspect-[4/5] rounded-xl border border-outline-variant/30 bg-surface/5 backdrop-blur-xl overflow-hidden group shadow-[0_0_15px_rgba(0,221,221,0.05)] hover:border-primary-fixed-dim/50 transition-colors duration-500 flex items-center justify-center">
+<!-- Decorative Elements -->
+<div class="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-background/20 to-background z-10"></div>
+<div class="absolute top-4 left-4 z-20 flex items-center gap-2">
+<div class="w-2 h-2 rounded-full bg-primary-fixed-dim animate-pulse"></div>
+<span class="font-label-caps text-label-caps text-primary-fixed-dim uppercase tracking-widest">Live Render</span>
+</div>
+<div class="absolute bottom-4 right-4 z-20">
+<button class="w-10 h-10 rounded-full border border-outline-variant/50 bg-background/50 backdrop-blur-md flex items-center justify-center text-on-surface hover:border-primary-fixed-dim hover:text-primary transition-colors">
+<span class="material-symbols-outlined">crop_free</span>
+</button>
+</div>
+<!-- Main Render Image -->
+<img alt="" class="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-700 mix-blend-lighten z-0" src="https://lh3.googleusercontent.com/aida/ADBb0uhN5co7EVf8fG4cOFcIhlib4jylCSOEDMumrGYrli0OThj3EfZo-qqnWg1WAFNS03Rr7o8vL8UyF1YayXr3X1WAUPVd_dooqOnI3M7hcwQnHNEJ1Hc9klSSrUUuoyij5nmPise9Vmrnt9lk7DTWnXgXrnqJkm8bKP0qqGNI-uRCQoujd4LxGpXFy8uXwLyfQ3sayta8ZcZDmk7UoHJGFztUKqgs_ccauT0xDFbjTK4bT4t4wQaeimZ0CL6y"/>
+<!-- Overlay Grid for Cyberpunk feel -->
+<div class="absolute inset-0 bg-[linear-gradient(rgba(0,221,221,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(0,221,221,0.03)_1px,transparent_1px)] bg-[size:20px_20px] pointer-events-none z-10 opacity-50"></div>
+</div>
+<!-- Status & Inventory Panel -->
+<div class="rounded-xl border border-outline-variant/30 bg-surface/5 backdrop-blur-md p-6 relative overflow-hidden">
+<div class="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-primary-fixed-dim to-secondary-container"></div>
+<h3 class="font-h3 text-h3 text-primary mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary-fixed-dim">settings_power</span>
+                    Deployment Status
+                </h3>
+<div class="flex items-center justify-between mb-8 pb-8 border-b border-outline-variant/20">
+<div>
+<p class="font-body-md text-body-md text-primary font-medium mb-1">Visibility</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Currently Active on Storefront</p>
+</div>
+<!-- Custom Toggle -->
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only peer" type="checkbox" value=""/>
+<div class="w-14 h-7 bg-surface-container-highest peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-6 after:w-6 after:transition-all border border-outline-variant/50 peer-checked:bg-primary-fixed-dim peer-checked:border-primary-fixed-dim shadow-[0_0_10px_rgba(0,221,221,0.2)]"></div>
+<span class="ml-3 font-label-caps text-label-caps text-primary uppercase">Active</span>
+</label>
+</div>
+<div class="flex items-center justify-between">
+<div>
+<p class="font-body-md text-body-md text-primary font-medium mb-1">Global Inventory</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Units available across all nodes</p>
+</div>
+<div class="flex items-center bg-surface-container-highest rounded-DEFAULT border border-outline-variant/30 overflow-hidden">
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">remove</span>
+</button>
+<input class="w-20 h-10 bg-transparent border-none text-center font-button text-button text-primary focus:ring-0" type="text" value="4,092"/>
+<button class="w-10 h-10 flex items-center justify-center text-on-surface-variant hover:text-primary hover:bg-white/5 transition-colors">
+<span class="material-symbols-outlined">add</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Secondary Images Grid -->
+<div class="grid grid-cols-2 gap-4">
+<div class="relative w-full aspect-video rounded-lg border border-outline-variant/30 bg-surface/5 backdrop-blur-sm overflow-hidden group cursor-pointer">
+<img alt="" class="w-full h-full object-cover opacity-60 group-hover:opacity-100 transition-opacity" src="https://mcsolution.com.bd/wp-content/uploads/2024/08/Google-Pixel-9-2024-Obsidian-Price-in-Bangladesh-MC-Solution-BD-1200x900.webp"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-background/50 backdrop-blur-sm">
+<span class="material-symbols-outlined text-primary">edit</span>
+</div>
+</div>
+<div class="relative w-full aspect-video rounded-lg border border-outline-variant/30 bg-surface/5 backdrop-blur-sm overflow-hidden flex items-center justify-center border-dashed cursor-pointer hover:border-primary-fixed-dim/50 hover:bg-primary-fixed-dim/5 transition-all">
+<div class="flex flex-col items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined">add_photo_alternate</span>
+<span class="font-label-caps text-label-caps">Add Asset</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Editable Form & JSON Specs (7 cols) -->
+<div class="col-span-1 lg:col-span-7 flex flex-col gap-gutter">
+<!-- Basic Info Form -->
+<div class="rounded-xl border border-outline-variant/30 bg-surface/5 backdrop-blur-xl p-8 relative">
+<!-- Refractive Divider Top -->
+<div class="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-primary-fixed-dim/30 to-transparent"></div>
+<h2 class="font-h2 text-h2 text-primary mb-8">Core Attributes</h2>
+<div class="space-y-6">
+<!-- Input Group: Name -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2 uppercase tracking-wider">Designation</label>
+<input class="w-full bg-transparent border-0 border-b border-primary-fixed-dim text-primary font-body-lg text-body-lg px-0 py-2 focus:ring-0 focus:border-primary-fixed-dim focus:bg-white/[0.02] transition-colors shadow-[0_1px_0_rgba(0,221,221,0.2)]" type="text" value="Axiom Quantum Edge X"/>
+</div>
+<div class="grid grid-cols-2 gap-6">
+<!-- Input Group: SKU -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2 uppercase tracking-wider">SKU Core</label>
+<input class="w-full bg-transparent border-0 border-b border-primary-fixed-dim text-primary font-body-lg text-body-lg px-0 py-2 focus:ring-0 focus:border-primary-fixed-dim focus:bg-white/[0.02] transition-colors" type="text" value="AQE-X-992-BLK"/>
+</div>
+<!-- Input Group: Price -->
+<div class="relative">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2 uppercase tracking-wider">Base Value (Cr)</label>
+<div class="relative">
+<span class="absolute left-0 top-2 text-primary-fixed-dim font-body-lg">§</span>
+<input class="w-full bg-transparent border-0 border-b border-primary-fixed-dim text-primary font-body-lg text-body-lg pl-6 py-2 focus:ring-0 focus:border-primary-fixed-dim focus:bg-white/[0.02] transition-colors" type="text" value="12,500.00"/>
+</div>
+</div>
+</div>
+<!-- Input Group: Description -->
+<div class="relative mt-8">
+<label class="block font-label-caps text-label-caps text-on-surface-variant mb-2 uppercase tracking-wider">Technical Summary</label>
+<textarea class="w-full bg-surface-container-highest/50 border border-outline-variant/30 rounded-DEFAULT text-on-surface font-body-md text-body-md p-4 focus:ring-1 focus:ring-primary-fixed-dim focus:border-primary-fixed-dim transition-colors resize-none placeholder-on-surface-variant/50" rows="4">Next-generation quantum processing unit designed for edge-computing environments. Features anomalous heat dissipation mechanisms and non-Euclidean data structuring capabilities. Standard warranty void if exposed to tachyon fields.</textarea>
+</div>
+</div>
+</div>
+<!-- JSON Meta Editor Panel -->
+<div class="rounded-xl border border-outline-variant/30 bg-[#0a0a0a] backdrop-blur-xl flex flex-col h-[500px] overflow-hidden relative shadow-[0_0_20px_rgba(0,0,0,0.5)]">
+<!-- Toolbar -->
+<div class="bg-surface-container/80 border-b border-outline-variant/20 px-4 py-3 flex items-center justify-between z-10">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary-fixed-dim text-sm">code</span>
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">product_meta.json</span>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 rounded bg-white/5 hover:bg-white/10 border border-outline-variant/20 font-label-caps text-label-caps text-on-surface-variant transition-colors">Format</button>
+<button class="px-3 py-1 rounded bg-primary-fixed-dim/10 hover:bg-primary-fixed-dim/20 border border-primary-fixed-dim/30 font-label-caps text-label-caps text-primary-fixed-dim transition-colors">Validate</button>
+</div>
+</div>
+<!-- Editor Area (Mocked with textarea for UI purposes, stylized to look like a code editor) -->
+<div class="relative flex-grow flex">
+<!-- Line Numbers -->
+<div class="w-12 bg-surface-container-lowest border-r border-outline-variant/10 text-right py-4 px-2 font-mono text-sm text-on-surface-variant/40 select-none hidden sm:block">
+                        1<br/>2<br/>3<br/>4<br/>5<br/>6<br/>7<br/>8<br/>9<br/>10<br/>11<br/>12<br/>13<br/>14<br/>15<br/>16<br/>17<br/>18<br/>19<br/>20
+                    </div>
+<!-- Code Content -->
+<textarea class="flex-grow bg-transparent border-none text-on-surface font-mono text-sm p-4 focus:ring-0 resize-none json-scroll" spellcheck="false">{
+  "specifications": {
+    "architecture": "Quantum-Core v4",
+    "qbits": 1024,
+    "coherence_time": "12.5ms",
+    "cooling_sys": "Liquid Helium Micro-channels",
+    "interface": "Neuro-optic uplink"
+  },
+  "materials": [
+    "Carbyne shell",
+    "Graphene heat sinks",
+    "Synthetic diamond lenses"
+  ],
+  "compatibility": {
+    "neural_link": "v2.0+",
+    "power_grid": "Class A High-Yield",
+    "os": ["NeonOS", "ArchAngel", "VoidLinux"]
+  },
+  "compliance": {
+    "cybernetics_board": true,
+    "radiation_shielding": "Grade Alpha",
+    "safety_override": false
+  }
+}</textarea>
+</div>
+<!-- Status Bar -->
+<div class="bg-surface-container/50 border-t border-outline-variant/20 px-4 py-1 flex justify-between items-center text-[10px] font-mono text-on-surface-variant/60">
+<span>UTF-8</span>
+<span class="flex items-center gap-1 text-primary-fixed-dim"><span class="w-2 h-2 rounded-full bg-primary-fixed-dim inline-block"></span> Valid JSON</span>
+</div>
+</div>
+<!-- Category & Tagging Bento Box -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<!-- Categories -->
+<div class="rounded-xl border border-outline-variant/30 bg-surface/5 backdrop-blur-md p-6">
+<h3 class="font-h3 text-h3 text-primary mb-4 flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">category</span>
+                        Taxonomy
+                    </h3>
+<select class="w-full bg-surface-container-highest border border-outline-variant/30 text-on-surface font-body-md rounded-DEFAULT p-3 mb-4 focus:ring-1 focus:ring-primary-fixed-dim focus:border-primary-fixed-dim outline-none appearance-none cursor-pointer">
+<option>Processing Units &gt; Quantum</option>
+<option>Processing Units &gt; Standard</option>
+<option>Implants &gt; Neural</option>
+<option>Accessories</option>
+</select>
+<select class="w-full bg-surface-container-highest border border-outline-variant/30 text-on-surface font-body-md rounded-DEFAULT p-3 focus:ring-1 focus:ring-primary-fixed-dim focus:border-primary-fixed-dim outline-none appearance-none cursor-pointer">
+<option>Manufacturer: Axiom</option>
+<option>Manufacturer: Kiroshi</option>
+<option>Manufacturer: Militech</option>
+</select>
+</div>
+<!-- Tags -->
+<div class="rounded-xl border border-outline-variant/30 bg-surface/5 backdrop-blur-md p-6">
+<h3 class="font-h3 text-h3 text-primary mb-4 flex items-center gap-2 text-sm">
+<span class="material-symbols-outlined text-on-surface-variant text-sm">sell</span>
+                        Meta Tags
+                    </h3>
+<div class="flex flex-wrap gap-2 mb-4">
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary-fixed-dim/30 text-secondary-fixed-dim font-label-caps text-label-caps uppercase">
+                            Premium <span class="material-symbols-outlined text-[10px] cursor-pointer hover:text-white">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary-fixed-dim/30 text-secondary-fixed-dim font-label-caps text-label-caps uppercase">
+                            Quantum <span class="material-symbols-outlined text-[10px] cursor-pointer hover:text-white">close</span>
+</span>
+<span class="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-secondary-container/20 border border-secondary-fixed-dim/30 text-secondary-fixed-dim font-label-caps text-label-caps uppercase">
+                            Restricted <span class="material-symbols-outlined text-[10px] cursor-pointer hover:text-white">close</span>
+</span>
+</div>
+<div class="relative">
+<input class="w-full bg-transparent border-0 border-b border-outline-variant text-primary font-body-sm px-0 py-1 focus:ring-0 focus:border-primary-fixed-dim transition-colors placeholder-on-surface-variant/30" placeholder="Add new tag..." type="text"/>
+<button class="absolute right-0 top-1 text-on-surface-variant hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">add_circle</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<bottom-nav-bar></bottom-nav-bar>
+<app-footer></app-footer>
+<script src="components.js"></script>
+</body></html>
+
+

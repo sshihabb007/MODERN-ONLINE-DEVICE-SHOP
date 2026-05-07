@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Neon-Glass Axiom - Products</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#243240",
+                        "secondary-container": "#6b13af",
+                        "inverse-surface": "#d6e4f7",
+                        "primary-fixed-dim": "#00dddd",
+                        "on-primary-container": "#007070",
+                        "on-primary-fixed-variant": "#004f4f",
+                        "tertiary": "#ffffff",
+                        "outline": "#839493",
+                        "tertiary-fixed-dim": "#c8c6c5",
+                        "error-container": "#93000a",
+                        "surface-container-lowest": "#020f1c",
+                        "secondary-fixed": "#f1dbff",
+                        "surface-tint": "#00dddd",
+                        "surface-container": "#13212e",
+                        "on-primary": "#003737",
+                        "tertiary-container": "#e5e2e1",
+                        "on-primary-fixed": "#002020",
+                        "surface-dim": "#061422",
+                        "secondary": "#deb7ff",
+                        "on-surface-variant": "#b9cac9",
+                        "surface": "#061422",
+                        "on-tertiary": "#313030",
+                        "tertiary-fixed": "#e5e2e1",
+                        "surface-container-high": "#1e2b39",
+                        "on-secondary": "#4a007f",
+                        "surface-container-highest": "#293644",
+                        "primary": "#ffffff",
+                        "surface-variant": "#293644",
+                        "on-tertiary-fixed": "#1c1b1b",
+                        "on-secondary-container": "#d4a5ff",
+                        "primary-fixed": "#00fbfb",
+                        "on-background": "#d6e4f7",
+                        "on-error-container": "#ffdad6",
+                        "primary-container": "#00fbfb",
+                        "on-secondary-fixed": "#2d0050",
+                        "outline-variant": "#3a4a49",
+                        "on-tertiary-container": "#656464",
+                        "inverse-primary": "#006a6a",
+                        "error": "#ffb4ab",
+                        "surface-container-low": "#0f1d2a",
+                        "surface-bright": "#2d3a49",
+                        "on-tertiary-fixed-variant": "#474646",
+                        "on-secondary-fixed-variant": "#680eac",
+                        "on-surface": "#d6e4f7",
+                        "on-error": "#690005",
+                        "background": "#061422",
+                        "secondary-fixed-dim": "#deb7ff"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "unit": "4px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "margin": "48px",
+                        "stack-sm": "12px",
+                        "stack-md": "24px",
+                        "stack-lg": "48px"
+                    },
+                    "fontFamily": {
+                        "h3": ["Space Grotesk"],
+                        "label-caps": ["Space Grotesk"],
+                        "body-lg": ["Inter"],
+                        "h2": ["Space Grotesk"],
+                        "display": ["Space Grotesk"],
+                        "body-md": ["Inter"],
+                        "h1": ["Space Grotesk"],
+                        "button": ["Space Grotesk"]
+                    },
+                    "fontSize": {
+                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
+                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }],
+                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(0, 221, 221, 0.2);
+        }
+        .glass-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(0, 221, 221, 0.2);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            border-color: rgba(0, 221, 221, 1);
+            box-shadow: inset 0 0 20px rgba(107, 19, 175, 0.2), 0 0 15px rgba(0, 221, 221, 0.1);
+        }
+        .ghost-button {
+            background-color: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(0, 221, 221, 0.5);
+            transition: all 0.3s ease;
+        }
+        .ghost-button:hover {
+            background: linear-gradient(90deg, rgba(0, 221, 221, 0.8) 0%, rgba(107, 19, 175, 0.8) 100%);
+            border-color: transparent;
+        }
+        .input-cyber {
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(0, 221, 221, 0.5);
+            transition: all 0.3s ease;
+        }
+        .input-cyber:focus {
+            outline: none;
+            border: 1px solid rgba(0, 221, 221, 1);
+            box-shadow: 0 0 10px rgba(0, 221, 221, 0.2);
+        }
+        .cyber-checkbox {
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border: 1px solid rgba(0, 221, 221, 0.5);
+            border-radius: 2px;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+        }
+        .cyber-checkbox:checked {
+            background: rgba(0, 221, 221, 0.2);
+            border-color: rgba(0, 221, 221, 1);
+        }
+        .cyber-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 8px;
+            height: 8px;
+            background-color: #00dddd;
+            border-radius: 1px;
+            box-shadow: 0 0 5px #00dddd;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body-md min-h-screen selection:bg-primary-fixed-dim selection:text-surface flex flex-col min-h-screen">
+<top-app-bar></top-app-bar>
+<!-- Main Content -->
+<main class="pt-[100px] pb-margin px-margin max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter flex-grow">
+<!-- Sidebar Filters -->
+<aside class="w-full md:w-64 flex-shrink-0">
+<div class="glass-panel rounded-xl p-gutter sticky top-[100px] flex flex-col gap-stack-md">
+<div>
+<h3 class="font-h3 text-h3 text-primary mb-stack-sm border-b border-outline-variant/30 pb-2">Filters</h3>
+</div>
+<!-- Category -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Category</h4>
+<div class="flex flex-col gap-2">
+<label class="flex items-center gap-2 cursor-pointer group">
+<input checked="" class="cyber-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md group-hover:text-primary transition-colors">Smartphones</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="cyber-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Laptops</span>
+</label>
+<label class="flex items-center gap-2 cursor-pointer group">
+<input class="cyber-checkbox" type="checkbox"/>
+<span class="font-body-md text-body-md text-on-surface-variant group-hover:text-primary transition-colors">Wearables</span>
+</label>
+</div>
+</div>
+<!-- Price Range -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Price Range</h4>
+<div class="flex gap-2 items-center">
+<input class="input-cyber w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Min" type="text"/>
+<span class="text-on-surface-variant">-</span>
+<input class="input-cyber w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Max" type="text"/>
+</div>
+</div>
+<!-- RAM -->
+<div>
+<h4 class="font-label-caps text-label-caps text-on-surface-variant mb-unit">RAM</h4>
+<div class="flex flex-wrap gap-2">
+<button class="bg-secondary-container/20 text-secondary-fixed border border-secondary-container px-3 py-1 rounded-full font-label-caps text-label-caps hover:bg-secondary-container/40 transition-colors">8GB</button>
+<button class="bg-surface-variant text-on-surface-variant border border-outline-variant px-3 py-1 rounded-full font-label-caps text-label-caps hover:border-primary-fixed-dim transition-colors">16GB</button>
+<button class="bg-surface-variant text-on-surface-variant border border-outline-variant px-3 py-1 rounded-full font-label-caps text-label-caps hover:border-primary-fixed-dim transition-colors">32GB</button>
+</div>
+</div>
+<!-- Button -->
+<button class="ghost-button font-button text-button text-primary-fixed-dim py-3 px-6 rounded-lg w-full mt-stack-sm">
+                    Apply Filters
+                </button>
+</div>
+</aside>
+<!-- Product Grid -->
+<div class="flex-1">
+<div class="flex justify-between items-center mb-stack-md">
+<h1 class="font-h2 text-h2 text-primary">Explore Devices</h1>
+<span class="font-body-md text-body-md text-on-surface-variant">Showing 15 results</span>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Product Card 1 -->
+<div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+<div class="relative aspect-video bg-surface-container-lowest overflow-hidden">
+<img alt="Futuristic gaming laptop" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0xFeubs8DCKAECNXX9FQvR6kCc6e9tAUc3XGJjK6mmtFtK7yObwxlNXFPq4kaOZoFwnUptajRsaSASKl8TdEempu7DMMONrhHQjkShHK9Z0NNbjkGiIHkXc05Xzas0hlkZrKpBQEnIvsGt5fjysmfRTsWqFu3rDXKVoWY_z9xzKFZG2M_DgqKKXnqcG16cOQ6nmSxurp7s5698ujrfLA5Io6r_HgYe_nqX5EKF-mgBODx_yS3Zus3gJ9d4ZTwyu5xMgJJAfp5DaoN"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+<div class="absolute top-2 right-2 bg-secondary-container/80 text-secondary-fixed px-2 py-1 rounded font-label-caps text-label-caps backdrop-blur-md">
+                            NEW
+                        </div>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-primary mb-1">Axiom Blade Pro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">Ultra-slim gaming laptop with brushed titanium chassis and violet backlit keys. 8K ray-traced display.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-h2 text-h2 text-primary-fixed-dim">$2,499</span>
+<button class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 2 -->
+<div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+<div class="relative aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" data-alt="A sleek, futuristic smartphone encased in a glowing acrylic block. The device features an edge-to-edge display showing a vibrant cyan and purple data visualization. The setting is a dark, high-end tech laboratory with subtle neon lighting reflecting off the glass surfaces. The mood is cutting-edge and exclusive. 8k resolution, macro photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCztsNKhKEFr11JLgNXhhd961J1Vdi-KNDm2k1dIo9DSWHTlrOam5Izl6ttLDCdN6Kv8HoZal0WVirORxklUar_Nj_6kXZ5Pl_OsoHUbbw3MCDJqXAL2niDUL3MRImYUEN9uYwNzGk2nK5y1qdva2_5cNr2kT3Vtft_jefTHXNxZkO4F4QFT707mG80d3X5-wsEeUi2y7LAv-PRQhDuwkpu00XXVP_rAkGFqC1UBVl42DJeiMMjaDxPuosPMxy2v8JLSeMKveo0ZvdF"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-primary mb-1">Nexus Prism X</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">Holographic display smartphone with quantum processor and adaptive glass back.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-h2 text-h2 text-primary-fixed-dim">$1,299</span>
+<button class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Product Card 3 -->
+<div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+<div class="relative aspect-square bg-surface-container-lowest overflow-hidden">
+<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" data-alt="A futuristic smartwatch floating in mid-air against a deep black void. The watch face displays a complex, glowing cyan interface with intricate data dials. The strap is made of a matte black, textured material that looks like carbon fiber. Subtle purple rim lighting highlights the metallic bezel. Cinematic lighting, hyper-realistic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuChxc49hi5HLO_tA8q7VQPMWbg6IQa6qvtRv5rNIlyZFhT5qDPsOhBwGkan9QtrDeBEhtJkk9hVg-7CkQtfotuptJU1oRNSWkRSn6X8cbC1nZNNqcREkuNLpOPcNNcg3xbOIK2ACCJWfkxAiN3mm7Z5yFr1iJENs2TemE_qbaGLyPGoEC1xXON-88dxqDntxCXyVW6B4RRO2ShsgaA9Uju70HvOqw7YoCCks74JfxpfBJNM0aELVahU2ix2e7dxpW3KkWwbjIv9VWW1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-primary mb-1">Chrono Sync v2</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">Neural-link compatible wearable with biometric encryption and fluid-metal chassis.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-h2 text-h2 text-primary-fixed-dim">$599</span>
+<button class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div>
+<div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+<div class="relative aspect-video bg-surface-container-lowest overflow-hidden">
+<img alt="iCrystal 16 Pro" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHX-8XGv7I0w4z9L5K4N5o0X-0L0w7X-8XGv7I0w4z9L5K4N5o0X-0L0w7X-8XGv7I0w4z9L5K4N5o0X-0L0w7"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-primary mb-1">iCrystal 16 Pro</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">The pinnacle of sleek design with a sapphire glass front and advanced liquid-metal frame.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-h2 text-h2 text-primary-fixed-dim">$1,499</span>
+<button class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div><div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+<div class="relative aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+<img alt="Galaxy Nova S25" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHX-8XGv7I0w4z9L5K4N5o0X-0L0w7X-8XGv7I0w4z9L5K4N5o0X-0L0w7X-8XGv7I0w4z9L5K4N5o0X-0L0w8"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-primary mb-1">Galaxy Nova S25</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">Boundless AMOLED display with integrated AI core for seamless neural processing.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-h2 text-h2 text-primary-fixed-dim">$1,199</span>
+<button class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div><div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">
+<div class="relative aspect-square bg-surface-container-lowest overflow-hidden">
+<img alt="Pixel Quantum 9" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCHX-8XGv7I0w4z9L5K4N5o0X-0L0w7X-8XGv7I0w4z9L5K4N5o0X-0L0w7X-8XGv7I0w4z9L5K4N5o0X-0L0w9"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+</div>
+<div class="p-stack-sm flex flex-col flex-1">
+<h3 class="font-h3 text-h3 text-primary mb-1">Pixel Quantum 9</h3>
+<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">Pure Android experience powered by a next-gen tensor quantum-entangled processor.</p>
+<div class="flex justify-between items-end mt-auto">
+<span class="font-h2 text-h2 text-primary-fixed-dim">$999</span>
+<button class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20">
+<span class="material-symbols-outlined">add_shopping_cart</span>
+</button>
+</div>
+</div>
+</div></div>
+<!-- Load More / Glitch Loader -->
+<div class="mt-stack-lg flex justify-center">
+<button class="ghost-button font-button text-button text-primary px-8 py-3 rounded-full flex items-center gap-2">
+<span class="material-symbols-outlined">autorenew</span>
+                    Load More Artifacts
+                </button>
+</div>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-6 left-1/2 -translate-x-1/2 w-max px-stack-lg rounded-full border border-outline-variant/40 bg-surface-container/20 backdrop-blur-2xl shadow-[0_-4px_20px_rgba(107,19,175,0.2)] z-50 flex gap-stack-md items-center p-2">
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="index.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">home</span>
+<span class="font-label-caps text-label-caps mt-1 hidden">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary-fixed-dim bg-secondary-container/40 rounded-full p-2 scale-90 duration-200" href="products.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">grid_view</span>
+<span class="font-label-caps text-label-caps mt-1 hidden">Explore</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="checkout.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">shopping_bag</span>
+<span class="font-label-caps text-label-caps mt-1 hidden">Cart</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant/70 p-2 hover:text-primary hover:bg-white/5 transition-all" href="profile.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">person</span>
+<span class="font-label-caps text-label-caps mt-1 hidden">Profile</span>
+</a>
+</nav>
+<app-footer></app-footer>
+<script src="components.js"></script>
+</body></html>
+
