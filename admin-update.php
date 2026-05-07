@@ -1,127 +1,11 @@
-<!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Update Device Info - Axiom Quantum Edge X</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&amp;family=Inter:wght@400&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-            darkMode: "class",
-            theme: {
-                extend: {
-                    "colors": {
-                        "surface-container-high": "#1e2b39",
-                        "background": "#061422",
-                        "on-secondary": "#4a007f",
-                        "inverse-on-surface": "#243240",
-                        "on-primary-fixed-variant": "#004f4f",
-                        "tertiary-fixed": "#e5e2e1",
-                        "surface-container": "#13212e",
-                        "on-background": "#d6e4f7",
-                        "surface-bright": "#2d3a49",
-                        "error-container": "#93000a",
-                        "primary-container": "#00fbfb",
-                        "on-primary-fixed": "#002020",
-                        "surface-container-highest": "#293644",
-                        "on-tertiary": "#313030",
-                        "tertiary": "#ffffff",
-                        "error": "#ffb4ab",
-                        "on-secondary-container": "#d4a5ff",
-                        "surface-container-low": "#0f1d2a",
-                        "secondary": "#deb7ff",
-                        "on-error-container": "#ffdad6",
-                        "tertiary-fixed-dim": "#c8c6c5",
-                        "tertiary-container": "#e5e2e1",
-                        "secondary-fixed-dim": "#deb7ff",
-                        "surface": "#061422",
-                        "outline": "#839493",
-                        "on-primary": "#003737",
-                        "outline-variant": "#3a4a49",
-                        "surface-container-lowest": "#020f1c",
-                        "inverse-surface": "#d6e4f7",
-                        "on-tertiary-fixed": "#1c1b1b",
-                        "on-primary-container": "#007070",
-                        "primary-fixed-dim": "#00dddd",
-                        "primary-fixed": "#00fbfb",
-                        "on-secondary-fixed": "#2d0050",
-                        "on-secondary-fixed-variant": "#680eac",
-                        "on-tertiary-container": "#656464",
-                        "on-surface": "#d6e4f7",
-                        "secondary-fixed": "#f1dbff",
-                        "on-tertiary-fixed-variant": "#474646",
-                        "inverse-primary": "#006a6a",
-                        "surface-variant": "#293644",
-                        "primary": "#ffffff",
-                        "on-error": "#690005",
-                        "surface-tint": "#00dddd",
-                        "surface-dim": "#061422",
-                        "secondary-container": "#6b13af",
-                        "on-surface-variant": "#b9cac9"
-                    },
-                    "borderRadius": {
-                        "DEFAULT": "0.125rem",
-                        "lg": "0.25rem",
-                        "xl": "0.5rem",
-                        "full": "0.75rem"
-                    },
-                    "spacing": {
-                        "stack-sm": "12px",
-                        "margin": "48px",
-                        "unit": "4px",
-                        "gutter": "24px",
-                        "stack-lg": "48px",
-                        "container-max": "1440px",
-                        "stack-md": "24px"
-                    },
-                    "fontFamily": {
-                        "label-caps": ["Space Grotesk"],
-                        "h2": ["Space Grotesk"],
-                        "h1": ["Space Grotesk"],
-                        "button": ["Space Grotesk"],
-                        "h3": ["Space Grotesk"],
-                        "display": ["Space Grotesk"],
-                        "body-lg": ["Inter"],
-                        "body-md": ["Inter"]
-                    },
-                    "fontSize": {
-                        "label-caps": ["12px", { "lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "700" }],
-                        "h2": ["32px", { "lineHeight": "1.3", "fontWeight": "600" }],
-                        "h1": ["48px", { "lineHeight": "1.2", "letterSpacing": "-0.01em", "fontWeight": "600" }],
-                        "button": ["14px", { "lineHeight": "1", "letterSpacing": "0.05em", "fontWeight": "600" }],
-                        "h3": ["24px", { "lineHeight": "1.4", "fontWeight": "500" }],
-                        "display": ["72px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
-                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }],
-                        "body-md": ["16px", { "lineHeight": "1.6", "fontWeight": "400" }]
-                    }
-                }
-            }
-        }
-    </script>
-<style>
-        /* Custom scrollbar for JSON editor */
-        .json-scroll::-webkit-scrollbar {
-            width: 8px;
-        }
-        .json-scroll::-webkit-scrollbar-track {
-            background: rgba(6, 20, 34, 0.5);
-            border-radius: 4px;
-        }
-        .json-scroll::-webkit-scrollbar-thumb {
-            background: rgba(0, 221, 221, 0.2);
-            border-radius: 4px;
-        }
-        .json-scroll::-webkit-scrollbar-thumb:hover {
-            background: rgba(0, 221, 221, 0.4);
-        }
-    </style>
-</head>
-<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container flex flex-col min-h-screen">
-<top-app-bar></top-app-bar>
-<!-- Main Content -->
+<?php
+session_start();
+if (!isset($_SESSION['sshihabb007_role']) || $_SESSION['sshihabb007_role'] !== 'admin') {
+    header("Location: index.php");
+    exit();
+}
+?>
+<?php include 'includes/mehedi_header.php'; ?>
 <main class="max-w-container-max mx-auto px-margin pt-[120px] pb-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-grow">
 <!-- Header Section -->
 <div class="col-span-1 lg:col-span-12 mb-stack-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
@@ -349,10 +233,4 @@
 </div>
 </div>
 </main>
-<!-- BottomNavBar (Mobile Only) -->
-<bottom-nav-bar></bottom-nav-bar>
-<app-footer></app-footer>
-<script src="components.js"></script>
-</body></html>
-
-
+<?php include 'includes/sshihabb007_footer.php'; ?>

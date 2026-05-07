@@ -1,0 +1,21 @@
+{
+  "name": "Neon-Glass Axiom",
+  "short_name": "Axiom",
+  "description": "Next-Gen Compute and Mobile Ecosystem",
+  "start_url": "/webPhp/NeonGlassAxiom/index.php",
+  "display": "standalone",
+  "background_color": "#061422",
+  "theme_color": "#00dddd",
+  "icons": [
+    {
+      "src": "icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

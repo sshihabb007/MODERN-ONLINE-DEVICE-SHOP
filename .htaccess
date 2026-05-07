@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /webPhp/NeonGlassAxiom/
+
+# Hide .php extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php [NC,L]
+
+# SEO Friendly URL for product details
+# Matches /product/some-slug and internally redirects to product-details.php?slug=some-slug
+RewriteRule ^product/([a-zA-Z0-9-]+)/?$ product-details.php?slug=$1 [L,QSA]
