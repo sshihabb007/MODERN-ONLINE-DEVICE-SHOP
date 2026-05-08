@@ -171,6 +171,28 @@ $current_page = basename($_SERVER['PHP_SELF']);
             background: #00dddd;
             border-radius: 1px;
         }
+        
+        /* Admin Form Inputs */
+        .glass-input, .glass-select {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(131, 148, 147, 0.3); /* outline color */
+            color: #ffffff; /* primary text */
+            transition: all 0.3s ease;
+            border-radius: 0.25rem;
+        }
+        .glass-input:focus, .glass-select:focus {
+            outline: none;
+            border-color: rgba(0, 221, 221, 0.8); /* primary-fixed-dim */
+            box-shadow: 0 0 10px rgba(0, 221, 221, 0.2);
+            background: rgba(255, 255, 255, 0.08);
+        }
+        /* Fix select dropdown options being white in some browsers */
+        .glass-select option {
+            background-color: #061422; /* surface background */
+            color: #ffffff;
+        }
     </style>
 </head>
 <body class="bg-background text-on-background antialiased selection:bg-primary-fixed-dim selection:text-surface-dim overflow-x-hidden flex flex-col min-h-screen">

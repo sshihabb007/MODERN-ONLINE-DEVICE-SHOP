@@ -36,9 +36,9 @@ $max_price = isset($_GET['max_price']) ? $_GET['max_price'] : '';
             <div>
                 <h4 class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Price Range</h4>
                 <div class="flex gap-2 items-center">
-                    <input name="min_price" value="<?php echo htmlspecialchars($min_price); ?>" type="number" class="input-cyber w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Min" />
+                    <input name="min_price" value="<?php echo htmlspecialchars($min_price); ?>" type="number" class="cyber-input w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Min" />
                     <span class="text-on-surface-variant">-</span>
-                    <input name="max_price" value="<?php echo htmlspecialchars($max_price); ?>" type="number" class="input-cyber w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Max" />
+                    <input name="max_price" value="<?php echo htmlspecialchars($max_price); ?>" type="number" class="cyber-input w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Max" />
                 </div>
             </div>
 

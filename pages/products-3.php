@@ -28,9 +28,9 @@
 <div>
 <h4 class="font-label-caps text-label-caps text-on-surface-variant mb-unit">Price Range</h4>
 <div class="flex gap-2 items-center">
-<input class="input-cyber w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Min" type="text"/>
+<input class="cyber-input w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Min" type="text"/>
 <span class="text-on-surface-variant">-</span>
-<input class="input-cyber w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Max" type="text"/>
+<input class="cyber-input w-full py-1 px-2 text-primary font-body-md text-body-md" placeholder="Max" type="text"/>
 </div>
 </div>
 <!-- RAM -->
