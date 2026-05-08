@@ -3,7 +3,7 @@ include '../includes/mehedi_header.php';
 include_once '../includes/shihab_security.php';
 $csrf_token = sshihabb007_generate_csrf();
 ?>
-<main class="pt-[120px] pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
+<main class="pt-12 pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
 <?php if (isset($_SESSION['auth_error'])): ?>
     <div class="bg-error-container text-on-error-container p-4 rounded-xl mb-6">
         <?php echo $_SESSION['auth_error']; unset($_SESSION['auth_error']); ?>

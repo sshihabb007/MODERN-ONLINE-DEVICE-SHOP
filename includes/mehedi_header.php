@@ -175,7 +175,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 </head>
 <body class="bg-background text-on-background antialiased selection:bg-primary-fixed-dim selection:text-surface-dim overflow-x-hidden flex flex-col min-h-screen">
 
-<header class="fixed top-unit w-[calc(100%-48px)] left-margin right-margin rounded-xl border border-outline-variant/30 bg-surface/10 backdrop-blur-md backdrop-blur-xl border border-outline-variant/20 shadow-[0_0_15px_rgba(0,221,221,0.1)] flex justify-between items-center px-gutter py-unit h-16 z-50 hidden md:flex">
+<header class="sticky top-unit mt-unit w-[calc(100%-48px)] mx-auto rounded-xl border border-outline-variant/30 bg-surface/10 backdrop-blur-md backdrop-blur-xl border border-outline-variant/20 shadow-[0_0_15px_rgba(0,221,221,0.1)] flex justify-between items-center px-gutter py-unit h-16 z-50 hidden md:flex">
     <div class="flex items-center">
         <a href="/webPhp/NeonGlassAxiom/index.php" class="font-display text-h3 font-bold tracking-tighter text-primary dark:text-primary">Neon-Glass Axiom</a>
     </div>

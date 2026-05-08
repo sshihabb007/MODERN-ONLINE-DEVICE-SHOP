@@ -47,7 +47,7 @@ if (isset($_SESSION['sshihabb007_cart']) && !empty($_SESSION['sshihabb007_cart']
 $shihab_taxes = $shihab_subtotal * $shihab_tax_rate;
 $shihab_total = $shihab_subtotal + $shihab_taxes;
 ?>
-<main class="max-w-container-max mx-auto px-gutter pt-[100px] md:pt-[120px] pb-[100px] flex-grow">
+<main class="max-w-container-max mx-auto px-gutter pt-12 md:pt-12 pb-[100px] flex-grow">
 
     <?php if ($shihab_order_success): ?>
     <!-- ========== ORDER SUCCESS STATE ========== -->

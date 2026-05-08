@@ -6,7 +6,7 @@ if (!isset($_SESSION['sshihabb007_role']) || $_SESSION['sshihabb007_role'] !== '
 }
 ?>
 <?php include '../includes/mehedi_header.php'; ?>
-<main class="flex-1 md:ml-64 pt-20 md:pt-margin px-gutter md:px-margin pb-32 max-w-container-max mx-auto w-full flex-grow">
+<main class="flex-1 pt-12 px-gutter md:px-margin pb-32 max-w-container-max mx-auto w-full flex-grow">
 <div class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
 <div>
 <h1 class="font-h1 text-h1 text-primary mb-unit">Forge New Artifact</h1>

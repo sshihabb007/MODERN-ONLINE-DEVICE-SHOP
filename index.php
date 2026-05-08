@@ -15,7 +15,7 @@ $sshihabb007_trending = $mehedi_trending_stmt->fetchAll(PDO::FETCH_ASSOC);
 $shihab_side_stmt = $shihab_pdo->query("SELECT * FROM shihab_products WHERE is_featured = 0 ORDER BY id ASC LIMIT 2");
 $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<main class="pt-24 md:pt-32 pb-32 max-w-container-max mx-auto px-gutter relative min-h-screen flex-grow">
+<main class="pt-12 md:pt-16 pb-32 max-w-container-max mx-auto px-gutter relative min-h-screen flex-grow">
 <!-- Ambient Background Glows -->
 <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-secondary-container/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
 <div class="fixed bottom-[-10%] right-[-10%] w-[30%] h-[30%] bg-primary-fixed-dim/10 blur-[100px] rounded-full pointer-events-none -z-10"></div>

@@ -6,7 +6,7 @@ if (!isset($_SESSION['sshihabb007_role']) || $_SESSION['sshihabb007_role'] !== '
 }
 ?>
 <?php include '../includes/mehedi_header.php'; ?>
-<main class="max-w-container-max mx-auto px-margin pt-[120px] pb-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-grow">
+<main class="max-w-container-max mx-auto px-margin pt-12 pb-margin grid grid-cols-1 lg:grid-cols-12 gap-gutter flex-grow">
 <!-- Header Section -->
 <div class="col-span-1 lg:col-span-12 mb-stack-lg flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
 <div>

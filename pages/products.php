@@ -5,7 +5,7 @@ $selected_categories = isset($_GET['category']) ? $_GET['category'] : [];
 $min_price = isset($_GET['min_price']) ? $_GET['min_price'] : '';
 $max_price = isset($_GET['max_price']) ? $_GET['max_price'] : '';
 ?>
-<main class="pt-[100px] pb-margin px-margin max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter flex-grow">
+<main class="pt-12 pb-margin px-margin max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter flex-grow">
     <!-- Sidebar Filters -->
     <aside class="w-full md:w-64 flex-shrink-0">
         <form method="GET" action="products.php" class="glass-panel rounded-xl p-gutter sticky top-[100px] flex flex-col gap-stack-md">

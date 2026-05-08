@@ -1,5 +1,5 @@
 <?php include '../includes/mehedi_header.php'; ?>
-<main class="pt-[120px] pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
+<main class="pt-12 pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
 <!-- Hero Section -->
 <section class="mb-24 flex flex-col md:flex-row gap-stack-lg items-center mt-12">
 <div class="flex-1 space-y-stack-md z-10">

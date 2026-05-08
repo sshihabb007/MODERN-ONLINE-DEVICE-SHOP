@@ -30,7 +30,7 @@ $mehedi_related_stmt = $shihab_pdo->prepare("SELECT * FROM shihab_products WHERE
 $mehedi_related_stmt->execute([$shihab_product['category'], $shihab_product['id']]);
 $sshihabb007_related = $mehedi_related_stmt->fetchAll(PDO::FETCH_ASSOC);
 ?>
-<main class="max-w-container-max mx-auto px-gutter pt-[120px] pb-margin min-h-screen flex-grow">
+<main class="max-w-container-max mx-auto px-gutter pt-12 pb-margin min-h-screen flex-grow">
     <!-- Breadcrumb / Back Action -->
     <nav class="mb-stack-md">
         <a class="inline-flex items-center gap-unit text-on-surface-variant hover:text-primary transition-colors text-button font-button" href="products.php">

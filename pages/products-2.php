@@ -1,5 +1,5 @@
 <?php include '../includes/mehedi_header.php'; ?>
-<main class="pt-[100px] pb-margin px-margin max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter flex-grow">
+<main class="pt-12 pb-margin px-margin max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter flex-grow">
 <!-- Sidebar Filters -->
 <aside class="w-full md:w-64 flex-shrink-0">
 <div class="glass-panel rounded-xl p-gutter sticky top-[100px] flex flex-col gap-stack-md">
