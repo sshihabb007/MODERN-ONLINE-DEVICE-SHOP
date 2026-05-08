@@ -1,7 +1,7 @@
 <?php
 session_start();
-require_once 'includes/shihab_db_connect.php';
-require_once 'includes/shihab_security.php';
+require_once '../includes/shihab_db_connect.php';
+require_once '../includes/shihab_security.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // CSRF Protection

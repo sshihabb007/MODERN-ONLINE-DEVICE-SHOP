@@ -1,6 +1,6 @@
 <?php
-require_once 'includes/shihab_db_connect.php';
-require_once 'includes/shihab_security.php';
+require_once '../includes/shihab_db_connect.php';
+require_once '../includes/shihab_security.php';
 
 global $shihab_pdo;
 

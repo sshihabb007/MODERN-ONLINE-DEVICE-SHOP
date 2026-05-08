@@ -1,6 +1,6 @@
 <?php
 include '../includes/mehedi_header.php';
-include_once 'includes/shihab_security.php';
+include_once '../includes/shihab_security.php';
 $csrf_token = sshihabb007_generate_csrf();
 ?>
 <main class="pt-[120px] pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
