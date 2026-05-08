@@ -33,7 +33,7 @@ $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
                     </p>
 </div>
 <div class="flex items-center gap-stack-md">
-<a href="products.php" class="bg-transparent border border-primary-fixed-dim text-primary-fixed-dim font-button text-button px-8 py-4 rounded-lg hover:bg-gradient-to-r hover:from-primary-fixed-dim hover:to-secondary-container hover:text-primary hover:border-transparent transition-all duration-300 shadow-[0_0_10px_rgba(0,221,221,0.2)] hover:shadow-[0_0_20px_rgba(0,221,221,0.5)]">
+<a href="pages/products.php" class="bg-transparent border border-primary-fixed-dim text-primary-fixed-dim font-button text-button px-8 py-4 rounded-lg hover:bg-gradient-to-r hover:from-primary-fixed-dim hover:to-secondary-container hover:text-primary hover:border-transparent transition-all duration-300 shadow-[0_0_10px_rgba(0,221,221,0.2)] hover:shadow-[0_0_20px_rgba(0,221,221,0.5)]">
                         Explore Rigs
                     </a>
 <a href="#sshihabb007-trending" class="bg-white/5 backdrop-blur-md text-primary font-button text-button px-8 py-4 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
@@ -160,7 +160,7 @@ $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
 <h2 class="font-h2 text-h2 text-primary">Trending Tech</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">The latest artifacts acquired for the vault.</p>
 </div>
-<a class="hidden md:flex items-center gap-1 text-primary-fixed-dim font-button text-button hover:text-primary transition-colors" href="products.php">
+<a class="hidden md:flex items-center gap-1 text-primary-fixed-dim font-button text-button hover:text-primary transition-colors" href="pages/products.php">
     View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
 </div>
@@ -170,7 +170,7 @@ $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
 <!-- Feature Card Large (featured product from DB) -->
 <div class="md:col-span-2 md:row-span-2 relative group rounded-xl overflow-hidden bg-white/5 border border-primary-fixed-dim/20 hover:border-primary-fixed-dim transition-all duration-300 shadow-[0_0_10px_rgba(0,221,221,0.05)] hover:shadow-[0_0_20px_rgba(0,221,221,0.2)]">
 <div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent z-10 pointer-events-none"></div>
-<a href="product-details.php?id=<?php echo $shihab_featured['id']; ?>" class="absolute inset-0 block z-0">
+<a href="pages/product-details.php?id=<?php echo $shihab_featured['id']; ?>" class="absolute inset-0 block z-0">
 <img alt="<?php echo htmlspecialchars($shihab_featured['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<?php echo htmlspecialchars($shihab_featured['image_url']); ?>"/>
 </a>
 <div class="absolute bottom-0 left-0 p-gutter w-full z-20 flex justify-between items-end">
@@ -180,7 +180,7 @@ $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
 <p class="font-body-md text-body-md text-on-surface-variant max-w-sm"><?php echo htmlspecialchars(mb_substr($shihab_featured['description'], 0, 80)) . '...'; ?></p>
 <span class="font-h3 text-h3 text-primary-fixed-dim">$<?php echo number_format($shihab_featured['price'], 2); ?></span>
 </div>
-<form method="POST" action="mehedi_cart_action.php" class="z-30 relative">
+<form method="POST" action="actions/mehedi_cart_action.php" class="z-30 relative">
 <input type="hidden" name="id" value="<?php echo $shihab_featured['id']; ?>">
 <button type="submit" name="add_to_cart" class="bg-white/10 backdrop-blur-md hover:bg-primary-fixed-dim hover:text-black border border-primary-fixed-dim/50 text-primary-fixed-dim rounded-full p-3 transition-colors">
 <span class="material-symbols-outlined">add_shopping_cart</span>
@@ -194,16 +194,16 @@ $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
 <!-- Side Card from DB -->
 <div class="relative group rounded-xl overflow-hidden bg-white/5 border border-outline-variant hover:border-primary-fixed-dim transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(0,221,221,0.15)] flex flex-col">
 <div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent z-10 pointer-events-none"></div>
-<a href="product-details.php?id=<?php echo $shihab_side['id']; ?>" class="h-3/5 w-full bg-surface-container-high relative overflow-hidden block">
+<a href="pages/product-details.php?id=<?php echo $shihab_side['id']; ?>" class="h-3/5 w-full bg-surface-container-high relative overflow-hidden block">
 <img alt="<?php echo htmlspecialchars($shihab_side['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<?php echo htmlspecialchars($shihab_side['image_url']); ?>"/>
 </a>
 <div class="p-4 z-20 flex-grow flex flex-col justify-end bg-surface-dim/50 backdrop-blur-sm">
-<a href="product-details.php?id=<?php echo $shihab_side['id']; ?>">
+<a href="pages/product-details.php?id=<?php echo $shihab_side['id']; ?>">
 <h3 class="font-body-lg text-body-lg text-primary font-semibold hover:text-primary-fixed-dim transition-colors"><?php echo htmlspecialchars($shihab_side['name']); ?></h3>
 </a>
 <div class="flex justify-between items-center mt-2">
 <span class="font-h3 text-h3 text-primary-fixed-dim">$<?php echo number_format($shihab_side['price'], 2); ?></span>
-<form method="POST" action="mehedi_cart_action.php">
+<form method="POST" action="actions/mehedi_cart_action.php">
 <input type="hidden" name="id" value="<?php echo $shihab_side['id']; ?>">
 <button type="submit" name="add_to_cart" class="text-on-surface-variant hover:text-primary transition-colors p-1 hover:bg-primary-fixed-dim/10 rounded-full">
 <span class="material-symbols-outlined">add_shopping_cart</span>
@@ -224,7 +224,7 @@ $mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
 <span class="material-symbols-outlined text-5xl text-primary-fixed-dim mb-4 drop-shadow-[0_0_10px_rgba(0,221,221,0.5)]">hub</span>
 <h2 class="font-display text-h1 text-primary mb-4">Ready to Upgrade?</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Join the elite ranks. Access exclusive drops, early tech previews, and hyper-personalized loadouts.</p>
-<a href="profile.php" class="bg-gradient-to-r from-primary-fixed-dim to-secondary-container text-primary font-button text-button px-10 py-4 rounded-xl hover:shadow-[0_0_25px_rgba(0,221,221,0.6)] transition-all duration-300 transform hover:-translate-y-1 inline-block">
+<a href="pages/profile.php" class="bg-gradient-to-r from-primary-fixed-dim to-secondary-container text-primary font-button text-button px-10 py-4 rounded-xl hover:shadow-[0_0_25px_rgba(0,221,221,0.6)] transition-all duration-300 transform hover:-translate-y-1 inline-block">
             Join the Nexus
         </a>
 </div>

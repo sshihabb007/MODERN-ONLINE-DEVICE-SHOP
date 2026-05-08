@@ -1,4 +1,4 @@
-<?php include 'includes/mehedi_header.php'; ?>
+<?php include '../includes/mehedi_header.php'; ?>
 <main class="pt-24 md:pt-32 pb-32 max-w-container-max mx-auto px-gutter relative min-h-screen flex-grow">
 <!-- Ambient Background Glows -->
 <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-secondary-container/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
@@ -114,4 +114,4 @@
 </div>
 </section>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

@@ -1,6 +1,6 @@
 <?php
-include 'includes/mehedi_header.php';
-include 'includes/shihab_db_connect.php';
+include '../includes/mehedi_header.php';
+include '../includes/shihab_db_connect.php';
 
 global $shihab_pdo;
 
@@ -15,13 +15,13 @@ if ($sshihabb007_product_id > 0) {
     $sshihabb007_stmt = $shihab_pdo->prepare("SELECT * FROM shihab_products WHERE slug = ?");
     $sshihabb007_stmt->execute([$mehedi_slug]);
 } else {
-    header("Location: products.php");
+    header("Location: ../pages/products.php");
     exit();
 }
 
 $shihab_product = $sshihabb007_stmt->fetch(PDO::FETCH_ASSOC);
 if (!$shihab_product) {
-    header("Location: products.php");
+    header("Location: ../pages/products.php");
     exit();
 }
 
@@ -150,7 +150,7 @@ $sshihabb007_related = $mehedi_related_stmt->fetchAll(PDO::FETCH_ASSOC);
             <!-- Add to Cart / Actions -->
             <div class="flex flex-col gap-stack-sm mt-stack-sm">
                 <?php if ($shihab_product['stock'] > 0): ?>
-                <form method="POST" action="mehedi_cart_action.php">
+                <form method="POST" action="../actions/mehedi_cart_action.php">
                     <input type="hidden" name="id" value="<?php echo $shihab_product['id']; ?>">
                     <button type="submit" name="add_to_cart"
                             class="w-full py-stack-sm px-gutter rounded-xl font-button text-button tracking-widest uppercase btn-ghost-glass flex items-center justify-center gap-unit hover:scale-[1.02] transition-all">
@@ -221,4 +221,4 @@ $sshihabb007_related = $mehedi_related_stmt->fetchAll(PDO::FETCH_ASSOC);
     </section>
     <?php endif; ?>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

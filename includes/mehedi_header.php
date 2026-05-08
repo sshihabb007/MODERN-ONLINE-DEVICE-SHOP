@@ -12,9 +12,9 @@ $current_page = basename($_SERVER['PHP_SELF']);
     <title>Neon-Glass Axiom</title>
     
     <!-- PWA Manifest -->
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/webPhp/NeonGlassAxiom/manifest.json">
     <meta name="theme-color" content="#061422">
-    <link rel="apple-touch-icon" href="icon-192x192.png">
+    <link rel="apple-touch-icon" href="/webPhp/NeonGlassAxiom/icon-192x192.png">
 
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
@@ -177,45 +177,45 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
 <header class="fixed top-unit w-[calc(100%-48px)] left-margin right-margin rounded-xl border border-outline-variant/30 bg-surface/10 backdrop-blur-md backdrop-blur-xl border border-outline-variant/20 shadow-[0_0_15px_rgba(0,221,221,0.1)] flex justify-between items-center px-gutter py-unit h-16 z-50 hidden md:flex">
     <div class="flex items-center">
-        <a href="index.php" class="font-display text-h3 font-bold tracking-tighter text-primary dark:text-primary">Neon-Glass Axiom</a>
+        <a href="/webPhp/NeonGlassAxiom/index.php" class="font-display text-h3 font-bold tracking-tighter text-primary dark:text-primary">Neon-Glass Axiom</a>
     </div>
     <nav class="hidden lg:flex items-center gap-gutter font-body-md text-body-md" id="desktop-nav">
-        <a class="<?= ($current_page == 'index.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="index.php">Home</a>
-        <a class="<?= ($current_page == 'products.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="products.php">Explore</a>
-        <a class="<?= ($current_page == 'checkout.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="checkout.php">Cart</a>
-        <a class="<?= ($current_page == 'profile.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="profile.php">Profile</a>
+        <a class="<?= ($current_page == 'index.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="/webPhp/NeonGlassAxiom/index.php">Home</a>
+        <a class="<?= ($current_page == 'products.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="/webPhp/NeonGlassAxiom/pages/products.php">Explore</a>
+        <a class="<?= ($current_page == 'checkout.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="/webPhp/NeonGlassAxiom/pages/checkout.php">Cart</a>
+        <a class="<?= ($current_page == 'profile.php') ? 'text-primary border-b-2 border-primary-fixed-dim' : 'text-on-surface-variant hover:border-primary-fixed-dim hover:text-primary' ?> transition-all duration-300" href="/webPhp/NeonGlassAxiom/pages/profile.php">Profile</a>
     </nav>
     <div class="flex items-center gap-stack-sm">
         <div class="relative group hidden sm:block">
             <input class="bg-transparent border-b border-primary-fixed-dim text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:border-primary-fixed-dim focus:ring-0 focus:shadow-[0_0_8px_rgba(0,221,221,0.5)] transition-shadow w-48 font-body-md text-body-md py-1" placeholder="Search..." type="text"/>
             <span class="material-symbols-outlined absolute right-0 top-1 text-primary-fixed-dim">search</span>
         </div>
-        <a href="checkout.php" class="p-2 text-primary hover:text-primary-fixed-dim transition-colors group relative">
+        <a href="/webPhp/NeonGlassAxiom/pages/checkout.php" class="p-2 text-primary hover:text-primary-fixed-dim transition-colors group relative">
             <span class="material-symbols-outlined group-active:scale-95 duration-150 transition-transform">shopping_cart</span>
             <?php if(isset($_SESSION['sshihabb007_cart']) && count($_SESSION['sshihabb007_cart']) > 0): ?>
                 <span class="absolute top-0 right-0 inline-flex items-center justify-center px-2 py-1 text-xs font-bold leading-none text-red-100 bg-red-600 rounded-full"><?= array_sum($_SESSION['sshihabb007_cart']) ?></span>
             <?php endif; ?>
         </a>
-        <a href="profile.php" class="p-2 text-primary hover:text-primary-fixed-dim transition-colors group">
+        <a href="/webPhp/NeonGlassAxiom/pages/profile.php" class="p-2 text-primary hover:text-primary-fixed-dim transition-colors group">
             <span class="material-symbols-outlined group-active:scale-95 duration-150 transition-transform">account_circle</span>
         </a>
     </div>
 </header>
 
 <nav class="fixed bottom-6 left-1/2 -translate-x-1/2 flex gap-stack-md items-center p-2 z-50 bg-surface-container/20 backdrop-blur-lg w-max px-stack-lg rounded-full border border-outline-variant/50 backdrop-blur-2xl border border-outline-variant/40 shadow-[0_-4px_20px_rgba(107,19,175,0.2)] md:hidden" id="mobile-nav">
-    <a class="flex flex-col items-center justify-center <?= ($current_page == 'index.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="index.php">
+    <a class="flex flex-col items-center justify-center <?= ($current_page == 'index.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="/webPhp/NeonGlassAxiom/index.php">
         <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
         <span class="font-label-caps text-label-caps mt-1">Home</span>
     </a>
-    <a class="flex flex-col items-center justify-center <?= ($current_page == 'products.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="products.php">
+    <a class="flex flex-col items-center justify-center <?= ($current_page == 'products.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="/webPhp/NeonGlassAxiom/pages/products.php">
         <span class="material-symbols-outlined">grid_view</span>
         <span class="font-label-caps text-label-caps mt-1">Explore</span>
     </a>
-    <a class="flex flex-col items-center justify-center <?= ($current_page == 'checkout.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="checkout.php">
+    <a class="flex flex-col items-center justify-center <?= ($current_page == 'checkout.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="/webPhp/NeonGlassAxiom/pages/checkout.php">
         <span class="material-symbols-outlined">shopping_bag</span>
         <span class="font-label-caps text-label-caps mt-1">Cart</span>
     </a>
-    <a class="flex flex-col items-center justify-center <?= ($current_page == 'profile.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="profile.php">
+    <a class="flex flex-col items-center justify-center <?= ($current_page == 'profile.php') ? 'text-primary-fixed-dim bg-secondary-container/40 rounded-full' : 'text-on-surface-variant/70' ?> p-2 hover:text-primary hover:bg-white/5 transition-all active:scale-90 duration-200" href="/webPhp/NeonGlassAxiom/pages/profile.php">
         <span class="material-symbols-outlined">person</span>
         <span class="font-label-caps text-label-caps mt-1">Profile</span>
     </a>

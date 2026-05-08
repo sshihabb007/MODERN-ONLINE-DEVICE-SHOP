@@ -1,4 +1,4 @@
-<?php include 'includes/mehedi_header.php'; ?>
+<?php include '../includes/mehedi_header.php'; ?>
 <main class="pt-[120px] pb-[120px] md:pb-margin max-w-container-max mx-auto px-margin flex-grow">
 <!-- Hero Section -->
 <section class="mb-24 flex flex-col md:flex-row gap-stack-lg items-center mt-12">
@@ -118,4 +118,4 @@
 <p class="font-body-md text-body-md text-on-surface-variant mb-6">Awaiting handshake protocol from external client.</p>
 </section>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

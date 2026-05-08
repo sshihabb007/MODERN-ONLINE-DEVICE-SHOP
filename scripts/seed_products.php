@@ -1,5 +1,5 @@
 <?php
-require 'includes/shihab_db_connect.php';
+require '../includes/shihab_db_connect.php';
 global $shihab_pdo;
 
 // First clear existing products (handle FK constraints)

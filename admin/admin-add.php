@@ -1,11 +1,11 @@
 <?php
 session_start();
 if (!isset($_SESSION['sshihabb007_role']) || $_SESSION['sshihabb007_role'] !== 'admin') {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 ?>
-<?php include 'includes/mehedi_header.php'; ?>
+<?php include '../includes/mehedi_header.php'; ?>
 <main class="flex-1 md:ml-64 pt-20 md:pt-margin px-gutter md:px-margin pb-32 max-w-container-max mx-auto w-full flex-grow">
 <div class="mb-stack-lg flex flex-col md:flex-row md:items-end justify-between gap-stack-md">
 <div>
@@ -198,4 +198,4 @@ if (!isset($_SESSION['sshihabb007_role']) || $_SESSION['sshihabb007_role'] !== '
 </div>
 </div>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

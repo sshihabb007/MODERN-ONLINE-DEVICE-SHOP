@@ -1,6 +1,6 @@
 <?php
-include 'includes/mehedi_header.php';
-include 'includes/shihab_db_connect.php';
+include '../includes/mehedi_header.php';
+include '../includes/shihab_db_connect.php';
 
 global $shihab_pdo;
 
@@ -74,7 +74,7 @@ $shihab_total = $shihab_subtotal + $shihab_taxes;
                     <span class="material-symbols-outlined">shopping_bag</span>
                     Continue Shopping
                 </a>
-                <a href="index.php" class="py-3 px-6 rounded-lg font-button text-button text-on-surface-variant border border-outline-variant/30 hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center gap-unit">
+                <a href="../index.php" class="py-3 px-6 rounded-lg font-button text-button text-on-surface-variant border border-outline-variant/30 hover:bg-surface-container hover:text-primary transition-colors flex items-center justify-center gap-unit">
                     <span class="material-symbols-outlined">home</span>
                     Go Home
                 </a>
@@ -95,7 +95,7 @@ $shihab_total = $shihab_subtotal + $shihab_taxes;
             <h1 class="font-h1 text-h1 text-primary">Secure Checkout</h1>
         </div>
         <?php if (!empty($mehedi_cart_items)): ?>
-        <form method="POST" action="mehedi_cart_action.php">
+        <form method="POST" action="../actions/mehedi_cart_action.php">
             <button type="submit" name="shihab_clear_cart"
                     class="text-error hover:text-on-surface-variant transition-colors font-button text-button flex items-center gap-unit border border-error/30 px-4 py-2 rounded-lg hover:border-outline-variant/50"
                     onclick="return confirm('Clear your entire cart?')">
@@ -169,18 +169,18 @@ $shihab_total = $shihab_subtotal + $shihab_taxes;
                                 <p class="font-body-md text-body-md text-primary-fixed-dim mt-1">$<?php echo number_format($item['price'], 2); ?> each</p>
                                 <!-- Qty controls (separate mini-form) -->
                                 <div class="flex items-center gap-2 mt-2">
-                                    <form method="POST" action="mehedi_cart_action.php" class="flex items-center gap-2">
+                                    <form method="POST" action="../actions/mehedi_cart_action.php" class="flex items-center gap-2">
                                         <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
                                         <div class="flex items-center bg-surface-container/80 rounded-full border border-outline-variant/30 overflow-hidden">
                                             <button type="submit" name="sshihabb007_update_qty"
-                                                    formaction="mehedi_cart_action.php"
+                                                    formaction="../actions/mehedi_cart_action.php"
                                                     onclick="var f=document.getElementById('qty-<?php echo $item['id']; ?>');f.value=Math.max(0,parseInt(f.value)-1)"
                                                     class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors text-lg leading-none">−</button>
                                             <input type="number" name="qty" id="qty-<?php echo $item['id']; ?>"
                                                    value="<?php echo $item['quantity']; ?>" min="0" max="99"
                                                    class="w-10 h-8 bg-transparent border-none text-center font-button text-button text-primary focus:ring-0 text-sm"/>
                                             <button type="submit" name="sshihabb007_update_qty"
-                                                    formaction="mehedi_cart_action.php"
+                                                    formaction="../actions/mehedi_cart_action.php"
                                                     onclick="var f=document.getElementById('qty-<?php echo $item['id']; ?>');f.value=parseInt(f.value)+1"
                                                     class="w-8 h-8 flex items-center justify-center text-on-surface-variant hover:text-primary transition-colors text-lg leading-none">+</button>
                                         </div>
@@ -193,7 +193,7 @@ $shihab_total = $shihab_subtotal + $shihab_taxes;
                             </div>
                             <div class="text-right flex-shrink-0 flex flex-col items-end gap-2">
                                 <div class="font-h3 text-h3 text-primary-fixed-dim">$<?php echo number_format($item['line_total'], 2); ?></div>
-                                <form method="POST" action="mehedi_cart_action.php">
+                                <form method="POST" action="../actions/mehedi_cart_action.php">
                                     <input type="hidden" name="id" value="<?php echo $item['id']; ?>">
                                     <button type="submit" name="mehedi_remove_item"
                                             class="text-outline hover:text-error transition-colors p-1 flex items-center gap-1 font-label-caps text-label-caps text-[10px]">
@@ -313,4 +313,4 @@ $shihab_total = $shihab_subtotal + $shihab_taxes;
     </form>
     <?php endif; ?>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

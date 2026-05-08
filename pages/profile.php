@@ -1,5 +1,5 @@
 <?php
-include 'includes/mehedi_header.php';
+include '../includes/mehedi_header.php';
 include_once 'includes/shihab_security.php';
 $csrf_token = sshihabb007_generate_csrf();
 ?>
@@ -15,7 +15,7 @@ $csrf_token = sshihabb007_generate_csrf();
         <!-- Login Form -->
         <div class="glass-panel p-stack-md rounded-xl">
             <h2 class="font-h2 text-h2 text-primary mb-stack-md">System Authentication</h2>
-            <form action="shihab_auth_action.php" method="POST" class="space-y-stack-sm">
+            <form action="../actions/shihab_auth_action.php" method="POST" class="space-y-stack-sm">
                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                 <input type="hidden" name="action" value="login">
                 <div>
@@ -35,7 +35,7 @@ $csrf_token = sshihabb007_generate_csrf();
         <!-- Register Form -->
         <div class="glass-modal p-stack-md rounded-xl border border-secondary-container/50">
             <h2 class="font-h2 text-h2 text-primary mb-stack-md">New Operative</h2>
-            <form action="shihab_auth_action.php" method="POST" class="space-y-stack-sm">
+            <form action="../actions/shihab_auth_action.php" method="POST" class="space-y-stack-sm">
                 <input type="hidden" name="csrf_token" value="<?php echo $csrf_token; ?>">
                 <input type="hidden" name="action" value="register">
                 <div>
@@ -65,7 +65,7 @@ $csrf_token = sshihabb007_generate_csrf();
     <?php endif; ?>
     <!-- Logout -->
     <div class="mb-stack-lg">
-        <form action="shihab_auth_action.php" method="POST">
+        <form action="../actions/shihab_auth_action.php" method="POST">
             <input type="hidden" name="action" value="logout">
             <button type="submit" class="ghost-button px-4 py-2 rounded font-button text-button text-error">Sever Connection (Logout)</button>
         </form>
@@ -242,4 +242,4 @@ $csrf_token = sshihabb007_generate_csrf();
 
 <?php endif; ?>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

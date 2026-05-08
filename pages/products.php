@@ -1,4 +1,4 @@
-<?php include 'includes/mehedi_header.php'; ?>
+<?php include '../includes/mehedi_header.php'; ?>
 <?php
 // Initialize filter variables
 $selected_categories = isset($_GET['category']) ? $_GET['category'] : [];
@@ -76,7 +76,7 @@ $max_price = isset($_GET['max_price']) ? $_GET['max_price'] : '';
 
     <!-- Product Grid -->
     <div class="flex-1">
-        <?php include 'includes/shihab_db_connect.php'; ?>
+        <?php include '../includes/shihab_db_connect.php'; ?>
         <?php
         global $shihab_pdo;
 
@@ -147,7 +147,7 @@ $max_price = isset($_GET['max_price']) ? $_GET['max_price'] : '';
                                title="View Details">
                                 <span class="material-symbols-outlined text-[18px]">visibility</span>
                             </a>
-                            <form method="POST" action="mehedi_cart_action.php">
+                            <form method="POST" action="../actions/mehedi_cart_action.php">
                                 <input type="hidden" name="id" value="<?php echo $mehedi_row['id']; ?>">
                                 <button type="submit" name="add_to_cart"
                                         class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20"
@@ -180,4 +180,4 @@ $max_price = isset($_GET['max_price']) ? $_GET['max_price'] : '';
         <?php endif; ?>
     </div>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

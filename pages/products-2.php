@@ -1,4 +1,4 @@
-<?php include 'includes/mehedi_header.php'; ?>
+<?php include '../includes/mehedi_header.php'; ?>
 <main class="pt-[100px] pb-margin px-margin max-w-container-max mx-auto flex flex-col md:flex-row gap-gutter flex-grow">
 <!-- Sidebar Filters -->
 <aside class="w-full md:w-64 flex-shrink-0">
@@ -164,4 +164,4 @@
 </div>
 </div>
 </main>
-<?php include 'includes/sshihabb007_footer.php'; ?>
+<?php include '../includes/sshihabb007_footer.php'; ?>

@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['mehedi_remove_item'])
     if (isset($_SESSION['sshihabb007_cart'][$shihab_product_id])) {
         unset($_SESSION['sshihabb007_cart'][$shihab_product_id]);
     }
-    header("Location: checkout.php");
+    header("Location: ../pages/checkout.php");
     exit();
 }
 
@@ -39,17 +39,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['sshihabb007_update_qt
     } else {
         $_SESSION['sshihabb007_cart'][$shihab_product_id] = $mehedi_qty;
     }
-    header("Location: checkout.php");
+    header("Location: ../pages/checkout.php");
     exit();
 }
 
 // --- CLEAR CART ---
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['shihab_clear_cart'])) {
     $_SESSION['sshihabb007_cart'] = [];
-    header("Location: checkout.php");
+    header("Location: ../pages/checkout.php");
     exit();
 }
 
-header("Location: products.php");
+header("Location: ../pages/products.php");
 exit();
 ?>

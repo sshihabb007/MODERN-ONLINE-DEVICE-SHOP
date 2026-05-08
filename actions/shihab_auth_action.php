@@ -24,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['sshihabb007_user_id'] = $user['id'];
             $_SESSION['sshihabb007_username'] = $user['name'];
             $_SESSION['sshihabb007_role'] = $user['role'];
-            header("Location: profile.php");
+            header("Location: ../pages/profile.php");
             exit();
         } else {
             $_SESSION['auth_error'] = "Invalid credentials. Unauthorized access detected.";
-            header("Location: profile.php");
+            header("Location: ../pages/profile.php");
             exit();
         }
     } elseif ($action === 'register') {
@@ -41,7 +41,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $check->execute([$username, $email]);
         if ($check->rowCount() > 0) {
             $_SESSION['auth_error'] = "Identity already exists in the system.";
-            header("Location: profile.php");
+            header("Location: ../pages/profile.php");
             exit();
         }
 
@@ -54,16 +54,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['sshihabb007_user_id'] = $shihab_pdo->lastInsertId();
             $_SESSION['sshihabb007_username'] = $username;
             $_SESSION['sshihabb007_role'] = $role;
-            header("Location: profile.php");
+            header("Location: ../pages/profile.php");
             exit();
         } else {
             $_SESSION['auth_error'] = "System failure during registration.";
-            header("Location: profile.php");
+            header("Location: ../pages/profile.php");
             exit();
         }
     } elseif ($action === 'logout') {
         session_destroy();
-        header("Location: profile.php");
+        header("Location: ../pages/profile.php");
         exit();
     }
 }
