@@ -1,4 +1,20 @@
-<?php include 'includes/mehedi_header.php'; ?>
+<?php
+include 'includes/mehedi_header.php';
+include 'includes/shihab_db_connect.php';
+global $shihab_pdo;
+
+// Fetch featured product for hero card
+$sshihabb007_featured_stmt = $shihab_pdo->query("SELECT * FROM shihab_products WHERE is_featured = 1 LIMIT 1");
+$shihab_featured = $sshihabb007_featured_stmt->fetch(PDO::FETCH_ASSOC);
+
+// Fetch trending products (latest 3)
+$mehedi_trending_stmt = $shihab_pdo->query("SELECT * FROM shihab_products ORDER BY id DESC LIMIT 3");
+$sshihabb007_trending = $mehedi_trending_stmt->fetchAll(PDO::FETCH_ASSOC);
+
+// Fetch two side cards
+$shihab_side_stmt = $shihab_pdo->query("SELECT * FROM shihab_products WHERE is_featured = 0 ORDER BY id ASC LIMIT 2");
+$mehedi_side_products = $shihab_side_stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
 <main class="pt-24 md:pt-32 pb-32 max-w-container-max mx-auto px-gutter relative min-h-screen flex-grow">
 <!-- Ambient Background Glows -->
 <div class="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] bg-secondary-container/20 blur-[120px] rounded-full pointer-events-none -z-10"></div>
@@ -17,13 +33,13 @@
                     </p>
 </div>
 <div class="flex items-center gap-stack-md">
-<button class="bg-transparent border border-primary-fixed-dim text-primary-fixed-dim font-button text-button px-8 py-4 rounded-lg hover:bg-gradient-to-r hover:from-primary-fixed-dim hover:to-secondary-container hover:text-primary hover:border-transparent transition-all duration-300 shadow-[0_0_10px_rgba(0,221,221,0.2)] hover:shadow-[0_0_20px_rgba(0,221,221,0.5)]">
+<a href="products.php" class="bg-transparent border border-primary-fixed-dim text-primary-fixed-dim font-button text-button px-8 py-4 rounded-lg hover:bg-gradient-to-r hover:from-primary-fixed-dim hover:to-secondary-container hover:text-primary hover:border-transparent transition-all duration-300 shadow-[0_0_10px_rgba(0,221,221,0.2)] hover:shadow-[0_0_20px_rgba(0,221,221,0.5)]">
                         Explore Rigs
-                    </button>
-<button class="bg-white/5 backdrop-blur-md text-primary font-button text-button px-8 py-4 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
-<span class="material-symbols-outlined">play_circle</span>
-                        Watch Demo
-                    </button>
+                    </a>
+<a href="#sshihabb007-trending" class="bg-white/5 backdrop-blur-md text-primary font-button text-button px-8 py-4 rounded-lg hover:bg-white/10 transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined">keyboard_arrow_down</span>
+                        See Trending
+                    </a>
 </div>
 </div>
 <!-- Hero Image / 3D Asset Area -->
@@ -137,69 +153,67 @@
 </div>
 </div>
 </section>
-<!-- Trending Tech (Bento Grid) -->
-<section class="flex flex-col gap-stack-lg mb-margin">
+<!-- Trending Tech (Bento Grid) - DYNAMIC -->
+<section id="sshihabb007-trending" class="flex flex-col gap-stack-lg mb-margin">
 <div class="flex justify-between items-end">
 <div>
 <h2 class="font-h2 text-h2 text-primary">Trending Tech</h2>
 <p class="font-body-md text-body-md text-on-surface-variant mt-2">The latest artifacts acquired for the vault.</p>
 </div>
-<a class="hidden md:flex items-center gap-1 text-primary-fixed-dim font-button text-button hover:text-primary transition-colors" href="#">
-                    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
+<a class="hidden md:flex items-center gap-1 text-primary-fixed-dim font-button text-button hover:text-primary transition-colors" href="products.php">
+    View All <span class="material-symbols-outlined text-sm">arrow_forward</span>
 </a>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-3 gap-gutter auto-rows-[250px]">
-<!-- Feature Card Large -->
+
+<?php if ($shihab_featured): ?>
+<!-- Feature Card Large (featured product from DB) -->
 <div class="md:col-span-2 md:row-span-2 relative group rounded-xl overflow-hidden bg-white/5 border border-primary-fixed-dim/20 hover:border-primary-fixed-dim transition-all duration-300 shadow-[0_0_10px_rgba(0,221,221,0.05)] hover:shadow-[0_0_20px_rgba(0,221,221,0.2)]">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent z-10"></div>
-<!-- Placeholder Image for featured product -->
-<div class="absolute inset-0 bg-surface-container-high w-full h-full flex items-center justify-center overflow-hidden">
-<div class="w-64 h-64 bg-primary-fixed-dim/10 rounded-full blur-[40px] absolute mix-blend-screen"></div>
-<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A sleek, futuristic mechanical keyboard with glowing cyan and purple keycaps sitting on a dark matte desk. The lighting is low and moody, emphasizing the high-tech, cyberpunk aesthetic of the keyboard. The background is slightly out of focus, showing blurred neon lights. The overall atmosphere is premium, cutting-edge, and slightly mysterious." src="https://lh3.googleusercontent.com/aida-public/AB6AXuA431zjviLHxsMT-bLQMTNSNW7z8vIaBO5TspvqWidT1-wv2_MUKRQ-pKP_SlBHDHZJoltD-rsW5f7Lu32kaqverva12rWjKHxWbL5GfSUhSqkdS_WERaOombf3TjvK_SIjguHCp6_4JWWqlgBXcnHkt_BK9J6iRE93pFdHoDQEApgt6VNku75O-v-iyskQF3xYMbN6QAaJAU12XTscbQmmM5iHRlGlcm8JJEVjeRINvavPX9uDWIYiF2C617g4zUf3ytXQvqBgWzbO"/>
-</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim via-transparent to-transparent z-10 pointer-events-none"></div>
+<a href="product-details.php?id=<?php echo $shihab_featured['id']; ?>" class="absolute inset-0 block z-0">
+<img alt="<?php echo htmlspecialchars($shihab_featured['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<?php echo htmlspecialchars($shihab_featured['image_url']); ?>"/>
+</a>
 <div class="absolute bottom-0 left-0 p-gutter w-full z-20 flex justify-between items-end">
 <div class="flex flex-col gap-2">
-<span class="bg-secondary-container/80 backdrop-blur-md text-white font-label-caps text-label-caps px-2 py-1 rounded w-max">NEW ARRIVAL</span>
-<h3 class="font-h3 text-h3 text-primary">Axiom Mech-Board V2</h3>
-<p class="font-body-md text-body-md text-on-surface-variant max-w-sm">Tactile precision meets holographic backlighting.</p>
+<span class="bg-secondary-container/80 backdrop-blur-md text-white font-label-caps text-label-caps px-2 py-1 rounded w-max">⭐ FEATURED</span>
+<h3 class="font-h3 text-h3 text-primary"><?php echo htmlspecialchars($shihab_featured['name']); ?></h3>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-sm"><?php echo htmlspecialchars(mb_substr($shihab_featured['description'], 0, 80)) . '...'; ?></p>
+<span class="font-h3 text-h3 text-primary-fixed-dim">$<?php echo number_format($shihab_featured['price'], 2); ?></span>
 </div>
-<button class="bg-white/10 backdrop-blur-md hover:bg-primary-fixed-dim hover:text-surface-dim border border-primary-fixed-dim/50 text-primary-fixed-dim rounded-full p-3 transition-colors">
+<form method="POST" action="mehedi_cart_action.php" class="z-30 relative">
+<input type="hidden" name="id" value="<?php echo $shihab_featured['id']; ?>">
+<button type="submit" name="add_to_cart" class="bg-white/10 backdrop-blur-md hover:bg-primary-fixed-dim hover:text-black border border-primary-fixed-dim/50 text-primary-fixed-dim rounded-full p-3 transition-colors">
 <span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
+</form>
 </div>
 </div>
-<!-- Secondary Card 1 -->
+<?php endif; ?>
+
+<?php foreach ($mehedi_side_products as $shihab_side): ?>
+<!-- Side Card from DB -->
 <div class="relative group rounded-xl overflow-hidden bg-white/5 border border-outline-variant hover:border-primary-fixed-dim transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(0,221,221,0.15)] flex flex-col">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent z-10"></div>
-<div class="h-3/5 w-full bg-surface-container-high relative overflow-hidden">
-<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A pair of high-end, matte black wireless headphones hovering against a dark grey background. Subtle electric cyan highlights catch the edges of the earcups. The lighting is dramatic and focused, highlighting the premium texture and minimalist design of the headphones. The mood is sophisticated and audiophile-focused." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBUyHiD3O4MLuhwZ9ZEWlh1TRmo9Obmb6lyBoA6aMQhXHGHRLCVNpVMF07ZmlA0aBVJpMp0yf6QK5WWHzQUX31MVeGKcUx91BzWPGpVj5JMD7l2taNrApf7jAhxr2f2tkWtnz4AIRIRWuRDvEns9u_IROE8qoXE2eQNnAWfj00k27-UHAZNVhLRjCd095A9vbf1Ffr-_cQ1NXg7EFyt_kQ0RHXYCjJhvaQFnUN0AA7DehVowhGcE8DyVYURr_RdhDXj9xa4vI4zZDve"/>
-</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent z-10 pointer-events-none"></div>
+<a href="product-details.php?id=<?php echo $shihab_side['id']; ?>" class="h-3/5 w-full bg-surface-container-high relative overflow-hidden block">
+<img alt="<?php echo htmlspecialchars($shihab_side['name']); ?>" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" src="<?php echo htmlspecialchars($shihab_side['image_url']); ?>"/>
+</a>
 <div class="p-4 z-20 flex-grow flex flex-col justify-end bg-surface-dim/50 backdrop-blur-sm">
-<h3 class="font-body-lg text-body-lg text-primary font-semibold">Sonic Void Cans</h3>
+<a href="product-details.php?id=<?php echo $shihab_side['id']; ?>">
+<h3 class="font-body-lg text-body-lg text-primary font-semibold hover:text-primary-fixed-dim transition-colors"><?php echo htmlspecialchars($shihab_side['name']); ?></h3>
+</a>
 <div class="flex justify-between items-center mt-2">
-<span class="font-h3 text-h3 text-primary-fixed-dim">$299</span>
-<button class="text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">shopping_cart</span>
+<span class="font-h3 text-h3 text-primary-fixed-dim">$<?php echo number_format($shihab_side['price'], 2); ?></span>
+<form method="POST" action="mehedi_cart_action.php">
+<input type="hidden" name="id" value="<?php echo $shihab_side['id']; ?>">
+<button type="submit" name="add_to_cart" class="text-on-surface-variant hover:text-primary transition-colors p-1 hover:bg-primary-fixed-dim/10 rounded-full">
+<span class="material-symbols-outlined">add_shopping_cart</span>
 </button>
+</form>
 </div>
 </div>
 </div>
-<!-- Secondary Card 2 -->
-<div class="relative group rounded-xl overflow-hidden bg-white/5 border border-outline-variant hover:border-primary-fixed-dim transition-all duration-300 shadow-[0_0_10px_rgba(0,0,0,0.2)] hover:shadow-[0_0_15px_rgba(0,221,221,0.15)] flex flex-col">
-<div class="absolute inset-0 bg-gradient-to-t from-surface-dim/80 to-transparent z-10"></div>
-<div class="h-3/5 w-full bg-surface-container-high relative overflow-hidden">
-<img alt="" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="A futuristic, geometric computer mouse resting on a glowing, translucent mousepad. The mouse has sharp, angular lines and a matte black finish with a single strip of glowing purple light. The background is completely dark, allowing the glowing elements to pop. The aesthetic is cyber-luxe and precision-engineered." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCigf9M96UduAPnT1mH-6lQIz-ulee2FKYlCrBo586zmOaMp-iI1bNB8wIDvPT3FfzDqyoiWhuwc42sXAvD0jOfHYt68N8Xde_810ItZLZdg-VaREVeHOg2bxXf4FUnYhKilYOmzFhXPsaSA8X0CQ67kR8j4GbGteFC19vKbwrzsZFjcpywZlxzKr32s_wzXOfwRflm4eAF6JcMWomwzlPaRUVD-jYTmtn5jfTqMcz03koshPXHAyA0XU-gqHMO85zQmDZew7NfkVCx"/>
-</div>
-<div class="p-4 z-20 flex-grow flex flex-col justify-end bg-surface-dim/50 backdrop-blur-sm">
-<h3 class="font-body-lg text-body-lg text-primary font-semibold">Ergo-Glitch Mouse</h3>
-<div class="flex justify-between items-center mt-2">
-<span class="font-h3 text-h3 text-primary-fixed-dim">$129</span>
-<button class="text-on-surface-variant hover:text-primary transition-colors">
-<span class="material-symbols-outlined">shopping_cart</span>
-</button>
-</div>
-</div>
-</div>
+<?php endforeach; ?>
+
 </div>
 </section>
 <!-- Call to Action -->
@@ -210,9 +224,9 @@
 <span class="material-symbols-outlined text-5xl text-primary-fixed-dim mb-4 drop-shadow-[0_0_10px_rgba(0,221,221,0.5)]">hub</span>
 <h2 class="font-display text-h1 text-primary mb-4">Ready to Upgrade?</h2>
 <p class="font-body-lg text-body-lg text-on-surface-variant mb-8">Join the elite ranks. Access exclusive drops, early tech previews, and hyper-personalized loadouts.</p>
-<button class="bg-gradient-to-r from-primary-fixed-dim to-secondary-container text-primary font-button text-button px-10 py-4 rounded-xl hover:shadow-[0_0_25px_rgba(0,221,221,0.6)] transition-all duration-300 transform hover:-translate-y-1">
+<a href="profile.php" class="bg-gradient-to-r from-primary-fixed-dim to-secondary-container text-primary font-button text-button px-10 py-4 rounded-xl hover:shadow-[0_0_25px_rgba(0,221,221,0.6)] transition-all duration-300 transform hover:-translate-y-1 inline-block">
             Join the Nexus
-        </button>
+        </a>
 </div>
 </section>
 </main>
