@@ -110,35 +110,56 @@ $max_price = isset($_GET['max_price']) ? $_GET['max_price'] : '';
         
         <div class="flex justify-between items-center mb-stack-md">
             <h1 class="font-h2 text-h2 text-primary">Explore Devices</h1>
-            <span class="font-body-md text-body-md text-on-surface-variant">Showing <?php echo count($products); ?> results</span>
+            <span class="font-body-md text-body-md text-on-surface-variant">Showing <strong class="text-primary"><?php echo count($products); ?></strong> results</span>
         </div>
 
         <?php if (count($products) > 0): ?>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-gutter">
-            <?php
-            foreach ($products as $mehedi_row) {
-                echo '<div class="glass-card rounded-xl overflow-hidden group cursor-pointer flex flex-col h-full">';
-                
-                echo '<div class="relative aspect-[3/4] bg-surface-container-lowest overflow-hidden">';
-                echo '<img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105" src="' . htmlspecialchars($mehedi_row['image_url']) . '" alt="' . htmlspecialchars($mehedi_row['name']) . '"/>';
-                echo '<div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div></div>';
-                
-                echo '<div class="p-stack-sm flex flex-col flex-1">';
-                echo '<h3 class="font-h3 text-h3 text-primary mb-1">' . htmlspecialchars($mehedi_row['name']) . '</h3>';
-                echo '<p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">' . htmlspecialchars($mehedi_row['description']) . '</p>';
-                
-                echo '<div class="flex justify-between items-end mt-auto">';
-                echo '<span class="font-h2 text-h2 text-primary-fixed-dim">$' . number_format($mehedi_row['price'], 2) . '</span>';
-                
-                // Add to cart form
-                echo '<form method="POST" action="mehedi_cart_action.php">';
-                echo '<input type="hidden" name="id" value="' . $mehedi_row['id'] . '">';
-                echo '<button type="submit" name="add_to_cart" class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20"><span class="material-symbols-outlined">add_shopping_cart</span></button>';
-                echo '</form>';
-                
-                echo '</div></div></div>';
-            }
-            ?>
+            <?php foreach ($products as $mehedi_row): ?>
+            <div class="glass-card rounded-xl overflow-hidden group flex flex-col h-full hover:scale-[1.02] transition-all duration-300 relative">
+                <!-- Clickable image area goes to product detail -->
+                <a href="product-details.php?id=<?php echo $mehedi_row['id']; ?>" class="block">
+                    <div class="relative aspect-[3/4] bg-surface-container-lowest overflow-hidden">
+                        <img class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-500 transform group-hover:scale-105"
+                             src="<?php echo htmlspecialchars($mehedi_row['image_url']); ?>"
+                             alt="<?php echo htmlspecialchars($mehedi_row['name']); ?>"/>
+                        <div class="absolute inset-0 bg-gradient-to-t from-background via-transparent to-transparent"></div>
+                        <?php if ($mehedi_row['is_featured']): ?>
+                        <span class="absolute top-3 left-3 bg-secondary-container/80 text-secondary-fixed border border-secondary-fixed/30 px-2 py-1 rounded-full font-label-caps text-label-caps text-[9px]">⭐ FEATURED</span>
+                        <?php endif; ?>
+                        <span class="absolute top-3 right-3 bg-surface-container/80 backdrop-blur-md text-on-surface-variant px-2 py-1 rounded-full font-label-caps text-label-caps text-[9px] capitalize"><?php echo htmlspecialchars($mehedi_row['category']); ?></span>
+                    </div>
+                </a>
+
+                <div class="p-stack-sm flex flex-col flex-1">
+                    <a href="product-details.php?id=<?php echo $mehedi_row['id']; ?>" class="block hover:text-primary transition-colors">
+                        <h3 class="font-h3 text-h3 text-primary mb-1"><?php echo htmlspecialchars($mehedi_row['name']); ?></h3>
+                    </a>
+                    <p class="font-body-md text-body-md text-on-surface-variant line-clamp-2 mb-stack-sm flex-1">
+                        <?php echo htmlspecialchars($mehedi_row['description']); ?>
+                    </p>
+
+                    <div class="flex justify-between items-center mt-auto gap-2">
+                        <span class="font-h2 text-h2 text-primary-fixed-dim">$<?php echo number_format($mehedi_row['price'], 2); ?></span>
+                        <div class="flex gap-2">
+                            <a href="product-details.php?id=<?php echo $mehedi_row['id']; ?>"
+                               class="text-on-surface-variant hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-outline-variant/30 hover:bg-white/10"
+                               title="View Details">
+                                <span class="material-symbols-outlined text-[18px]">visibility</span>
+                            </a>
+                            <form method="POST" action="mehedi_cart_action.php">
+                                <input type="hidden" name="id" value="<?php echo $mehedi_row['id']; ?>">
+                                <button type="submit" name="add_to_cart"
+                                        class="text-primary-fixed-dim hover:text-primary transition-colors p-2 bg-white/5 rounded-full border border-primary-fixed-dim/30 hover:bg-primary-fixed-dim/20"
+                                        title="Add to Cart">
+                                    <span class="material-symbols-outlined text-[18px]">add_shopping_cart</span>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php endforeach; ?>
             </div>
         <?php else: ?>
             <div class="glass-panel p-12 text-center rounded-xl flex flex-col items-center justify-center">
