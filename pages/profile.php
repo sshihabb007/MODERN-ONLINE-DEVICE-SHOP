@@ -60,7 +60,7 @@ $csrf_token = sshihabb007_generate_csrf();
     <!-- Admin Controls -->
     <?php if (isset($_SESSION['sshihabb007_role']) && $_SESSION['sshihabb007_role'] === 'admin'): ?>
         <div class="mb-stack-md flex gap-4">
-            <a href="admin-add.php" class="bg-error-container text-on-error-container px-4 py-2 rounded font-button text-button">Admin Dashboard</a>
+            <a href="../admin/admin-add.php" class="bg-error-container text-on-error-container px-4 py-2 rounded font-button text-button">Admin Dashboard</a>
         </div>
     <?php endif; ?>
     <!-- Logout -->
